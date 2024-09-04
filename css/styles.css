@@ -39,7 +39,7 @@ body.no-scroll {
     padding-right: 1rem;
     padding-left: 1rem;
     overflow-y: auto;
-    background-color: #f8f9fa;
+    background-color: #ffffff;
     transition: left 0.3s ease-in-out;
     z-index: 1040;
 }
@@ -49,7 +49,7 @@ body.no-scroll {
 }
 
 .navbar-toggler {
-    background-color: #1c84c6;
+    background-color: #000000;
 }
 
 .offcanvas-collapse {
@@ -112,3 +112,9 @@ body.no-scroll {
 #backToTopBtn:focus {
     background-color: #555;
 }
+.log{
+    display: flex;
+    margin-left: 20px;
+    width: 100px;
+}
+    
