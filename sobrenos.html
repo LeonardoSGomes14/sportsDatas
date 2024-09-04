@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+    <title>Pesquisa da Geração</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/sobrenos.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-light bg-light fixed-top">
+        <button class="navbar-toggler" type="button" id="navToggle">
+            <span class="navbar-icon"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#f1f1f1"
+                    class="bi bi-list" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                        d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5" />
+                </svg></span>
+        </button>
+        <a class="navbar-brand" href="#" style="font-weight: bold;">Geração Y Millennials 1</a>
+    </nav>
+
+    <!-- Offcanvas -->
+    <div class="offcanvas-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <span class="nav-icon"><img src="./img/icons/journal-text.svg" alt=""></span>
+                <a class="nav-link" href="./caracteristicas.html">Características da geração</a>
+            </li>
+            <li class="nav-item">
+                <span class="nav-icon"><img src="./img/icons/exclamation-triangle.svg" alt=""></span>
+                <a class="nav-link" href="./desafios.html">Desafios enfrentados</a>
+            </li>
+            <li class="nav-item">
+                <span class="nav-icon"><img src="./img/icons/motherboard.svg" alt=""></span>
+                <a class="nav-link" href="./comunicação.html">Tec. da Comunicação</a>
+            </li>
+            <li class="nav-item">
+                <span class="nav-icon"><img src="./img/icons/hypnotize.svg" alt=""></span>
+                <a class="nav-link" href="./nostalgias.html">Nostalgias</a>
+            </li>
+        </ul>
+        <!-- Rodapé do Offcanvas -->
+        <div class="offcanvas-footer">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <span class="nav-icon"><img src="./img/icons/info-circle.svg" alt=""></span>
+                    <a class="nav-link" href="./sobrenos.html">Sobre nós</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <section id="caracteristicas" class="container mt-5">
+        <h3>Quem Somos?</h3>
+
+        <div class="card" style="width: 100%; margin-bottom: 10px;">
+            <img src="./img/pessoas.png" alt="">
+        </div>
+        <p>2DTM de 2024 pode ser considerada a melhor sala do SENAI "Shunji Nishimura". <br><br>
+            Desde 2023, temos nos dedicado intensamente à área de Desenvolvimento de Sistemas, construindo juntos uma
+            base sólida de conhecimento e habilidades.<br><br>
+
+            Com o apoio dos nossos professores e a colaboração entre colegas, acreditamos que estamos prontos para
+            encarar o futuro. A certeza é que
+            juntos podemos alcançar grandes conquistas.
+
+        </p>
+
+
+        <h3 style="margin-top: 30px;">Professores</h3>
+        <div class="images-container">
+            <div class="card" style="width: 18rem;">
+                <img src="./img/alunos/ageu.png" class="card-img-top" alt="Jonatas">
+                <div class="card-body">
+                    <p class="card-text">Jonatas</p>
+                </div>
+            </div>
+            <div class="card" style="width: 18rem;">
+                <img src="./img/alunos/NI.png" class="card-img-top" alt="Rafael">
+                <div class="card-body">
+                    <p class="card-text">Rafael</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="alunos"
+            style="display: flex; align-items: center; justify-content: space-between; margin-top: 30px;">
+            <h3>Alunos</h3>
+            <p class="d-inline-flex gap-1">
+                <button class="btn btn-primary" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                    Exibir alunos
+                </button>
+            </p>
+        </div>
+
+        <div class="collapse" id="collapseExample" style="transition: 0.3s ease;">
+            <div class="card card-body alunosContainer" style="transform: none;">
+
+                <p style="font-weight: bold;">Clique no aluno para ver detalhes</p>
+
+                <div id="alunosContainer"></div>
+
+                <!-- Modal -->
+                <div id="modal" class="modal">
+                    <div class="modal-content">
+                        <span class="close-button">&times;</span>
+                        <img id="modalFoto" src="" alt="Foto do Aluno">
+                        <h2 id="modalNome"></h2>
+                        <p id="modalInfo"></p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <h3 style="margin-top: 30px;">Desenvolvedores do Site</h3>
+        <h5 style="margin-top: 20px;">Pesquisadores</h5>
+        <div class="images-container">
+            <div class="card" style="width: 18rem;">
+                <img src="./img/alunos/gabrielly.jpg" class="card-img-top" alt="xx">
+                <div class="card-body">
+                    <p class="card-text">Kauã Silva</p>
+                </div>
+            </div>
+            <div class="card" style="width: 18rem;">
+                <img src="./img/alunos/emilly.jpg" class="card-img-top" alt="xx">
+                <div class="card-body">
+                    <p class="card-text">Mateus Oliveira</p>
+                </div>
+            </div>
+            <div class="card" style="width: 18rem;">
+                <img src="./img/alunos/luisa.jpg" class="card-img-top" alt="xx">
+                <div class="card-body">
+                    <p class="card-text">leonardo Silveira</p>
+                </div>
+            </div>
+            <div class="card" style="width: 18rem;">
+                <img src="./img/alunos/victoria.jpg" class="card-img-top" alt="xx">
+                <div class="card-body">
+                    <p class="card-text">Maria Eduarda</p>
+                </div>
+            </div>
+            <div class="card" style="width: 48%; flex: none;">
+                <img src="./img/alunos/isabella.jpg" class="card-img-top" alt="xx">
+                <div class="card-body">
+                    <p class="card-text">Ruana Ribeiro</p>
+                </div>
+            </div>
+        <div class="card" style="width: 48%; flex: none;">
+            <img src="./img/alunos/isabella.jpg" class="card-img-top" alt="xx">
+            <div class="card-body">
+                <p class="card-text">Livia Botelho</p>
+            </div>
+        </div>
+            <div class="card" style="width: 48%; flex: none;">
+                <img src="./img/alunos/isabella.jpg" class="card-img-top" alt="xx">
+                <div class="card-body">
+                    <p class="card-text">Evellin Correia</p>
+                </div>
+            </div>
+            <div class="card" style="width: 48%; flex: none;">
+                <img src="./img/alunos/isabella.jpg" class="card-img-top" alt="xx">
+                <div class="card-body">
+                    <p class="card-text">Camilly RIbeiro</p>
+                </div>
+            </div>  
+        <h5 style="margin-top: 30px;">Desenvolvedor</h5>
+        <div class="card" style="width: 47%; border-radius: 10px;">
+            <img src="./img/alunos/kaua.png" class="card-img-top" alt="xx">
+            <div class="card-body">
+                <p class="card-text">Kauã Goat</p>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Rodapé -->
+    <div class="footer">
+        <p style="margin: 0; font-weight: bold; font-size: larger;">2DTM</p>
+        <p>SENAI "Shunji Nishimura"</p>
+        <p style="font-size: 12px; display: flex; margin: 0;">@Copyright 2000-2024</p>
+    </div>
+
+    <button id="backToTopBtn" title="Voltar ao Topo">↑</button>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./js/app.js"></script>
+    <script src="./js/sobrenos.js"></script>
+</body>
+
+</html>

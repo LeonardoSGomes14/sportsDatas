@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+    <title>Pesquisa da Geração</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="./css/styles.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+</head>
+
+<style>
+    .navegation {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .audios {
+        display: flex;
+    }
+
+    #bordoesList {
+        margin: 0;
+    }
+
+    #bordoesList li {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        position: relative;
+        font-size: 18px;
+        margin-bottom: 15px;
+    }
+
+    li.expanded {
+        padding-bottom: 60px;
+        color: cornflowerblue;
+    }
+
+    audio {
+        display: none;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+
+    li.expanded audio {
+        display: block;
+
+    }
+
+    .carousel-item img {
+        width: 100%;
+        height: 220px;
+    }
+
+    section {
+        padding-top: 70px;
+    }
+</style>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-light bg-light fixed-top">
+        <button class="navbar-toggler" type="button" id="navToggle">
+            <span class="navbar-icon"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#f1f1f1"
+                    class="bi bi-list" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                        d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5" />
+                </svg></span>
+        </button>
+        <a class="navbar-brand" href="#" style="font-weight: bold;">Geração Y Millennials 1</a>
+    </nav>
+
+    <!-- Offcanvas -->
+    <div class="offcanvas-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <span class="nav-icon"><img src="./img/icons/journal-text.svg" alt=""></span>
+                <a class="nav-link" href="./caracteristicas.html">Características da geração</a>
+            </li>
+            <li class="nav-item">
+                <span class="nav-icon"><img src="./img/icons/exclamation-triangle.svg" alt=""></span>
+                <a class="nav-link" href="./desafios.html">Desafios enfrentados</a>
+            </li>
+            <li class="nav-item">
+                <span class="nav-icon"><img src="./img/icons/motherboard.svg" alt=""></span>
+                <a class="nav-link" href="./comunicação.html">Tec. da Comunicação</a>
+            </li>
+            <li class="nav-item">
+                <span class="nav-icon"><img src="./img/icons/hypnotize.svg" alt=""></span>
+                <a class="nav-link" href="./nostalgias.html">Nostalgias</a>
+            </li>
+        </ul>
+        <!-- Rodapé do Offcanvas -->
+        <div class="offcanvas-footer">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <span class="nav-icon"><img src="./img/icons/info-circle.svg" alt=""></span>
+                    <a class="nav-link" href="./sobrenos.html">Sobre nós</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Seções -->
+    <section id="tecnologias" class="container mt-5" style="padding-top: 0;">
+        <h3>Tecnologias da Comunicação</h3>
+        <p>Nesse tópico iremos falar sobre as tecnologias da comunicação (gírias, bordões, aparelhos)... da Geração Y,
+            os Millennials. Leia
+            abaixo e aproveite.</p>
+
+        <h4>Para onde quer ir?</h4>
+        <div class="navegation">
+            <a href="#bordoes">- Bordões</a>
+            <a href="#girias">- Gírias</a>
+            <a href="#comunicacao">- Aparelhos de Cominicação</a>
+            <a href="#brinquedos">- Brinquedos</a>
+        </div>
+
+        <img src="./img/bordoes.png" alt="" width="100%" style="margin: 20px 0 -80px 0;">
+        </p>
+    </section>
+
+    <section id="bordoes" class="container mt-5">
+        <h3>Bordões</h3>
+        <p>Bordões são frases ou expressões que se tornam populares e são usadas repetidamente por um grupo ou na
+            cultura popular. Eles ajudam a criar identidade e costumam ser associados a um determinado contexto ou
+            personalidade. Aqui estõ alguns exemplos dos bordões mais utilizados pelas marcas da época dos Millennials:
+        </p> <br>
+
+        <p style="font-weight: bold;">*clique nas frases para ouvir*</p> <br>
+
+        <ul id="bordoesList" style="margin-bottom: -80px;">
+            <li>”Tomou doril, a dor sumiu!” <audio src="./audios/doril.mp3" type="audio/mpeg" controls></audio></li>
+
+            <li>“Quem come um, pede bis” <audio src="./audios/bis.mp3" type="audio/mpeg" controls></audio></li>
+
+            <li>“Helmann`s, a verdadeira maionese” <audio src="./audios/helmans.mp3" type="audio/mpeg" controls></audio>
+            </li>
+
+            <li>“A cerveja que desce redondo” <audio src="./audios/skol.mp3" type="audio/mpeg" controls></audio></li>
+
+            <li>“É gripe? Benegrip” <audio src="./audios/benegrip.mp3" type="audio/mpeg" controls></audio></li>
+
+            <li>“Legítimas, só Havaianas” <audio src="./audios/havaianas.mp3" type="audio/mpeg" controls></audio></li>
+
+            <li>“Pergunta no Posto Ipiranga” <audio src="./audios/ipiranga.mp3" type="audio/mpeg" controls></audio></li>
+
+            <li>“Se é Bayer, é bom” <audio src="./audios/bayer.mp3" type="audio/mpeg" controls></audio></li>
+        </ul>
+    </section>
+
+    <section id="girias" class="container mt-5">
+        <h3>Gírias</h3>
+        <p>Gíria é uma linguagem informal usada por grupos específicos para se comunicar de forma descontraída e
+            expressiva. São palavras ou expressões que surgem em contextos culturais e sociais, com significados únicos
+            e variáveis, refletindo a identidade e o pertencimento de quem as utiliza. Abaixo algumas gírias utilizadas
+            pela Geração Y :</p> <br>
+
+        <ul style="margin-left: 20px; margin-bottom: -80px;">
+            <li><span style="font-weight: bold;">Patota:</span> uma gíria usada quando se tinha a intenção ou ato de
+                buscar trapacear no jogo. </li>
+            <li><span style="font-weight: bold;">Troço:</span> sem importância ou que não consegue-se definir
+                corretamente. </li>
+            <li><span style="font-weight: bold;">Antenado:</span> Uma pessoa antenada é aquela que está sempre ligada
+                nas coisas, principalmente nas novidades,
+                como música, moda, cultura e cinema. </li>
+            <li><span style="font-weight: bold;">Gororoba:</span> uma comida com aparência estranha ou até mesmo ruim.
+            </li>
+            <li><span style="font-weight: bold;">Duca:</span> “O trabalho dele ficou muito bom! Ficou duca…”.</li>
+            <li><span style="font-weight: bold;">Baranga</span> – mulher feia; </li>
+            <li><span style="font-weight: bold;">Bolado</span> – chateado, bravo; </li>
+            <li><span style="font-weight: bold;">Chavecar</span> – paquerar; </li>
+            <li><span style="font-weight: bold;">De lei</span> – algo que sempre acontece da mesma forma; </li>
+            <li><span style="font-weight: bold;">Descolar</span> – arranjar alguma coisa; </li>
+            <li><span style="font-weight: bold;">Pindaíba</span> – estar sem dinheiro;</li>
+            <li><span style="font-weight: bold;">Queimar o filme</span> – passar por algo vergonhoso que vai estragar a
+                imagem; </li>
+            <li><span style="font-weight: bold;">Xilindró</span> – prisão, cadeia; </li>
+        </ul>
+    </section>
+
+    <section id="comunicacao" class="container mt-5">
+        <h3>Aparelhos de Comunicação</h3>
+        <p>Com a chegada dos anos 1990, período em que começaram a explorar o mundo da computação diante dos pesados
+            monitores de tubo, a tecnologia avançava rapidamente. <br><br> Os disquetes, dispositivos de armazenamento
+            com
+            capacidade de 720 KB a 5,76 MB, foram substituídos pelos CDs, que, por sua vez, deram lugar aos cartões SD,
+            ampliando significativamente a capacidade de armazenamento. <br><br>
+
+            A Geração Y, naturalmente, abandonou o passado analógico com facilidade, abraçando o surgimento de
+            computadores pessoais mais potentes, smartphones, tablets, GPSs, wi-fi e muitas outras inovações que hoje
+            fazem parte do nosso cotidiano. </p>
+
+        <div id="carouselExampleCaptions" class="carousel slide" style="margin-bottom: -80px;">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="./img/radio.png" class="d-block w-100" alt="radio">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Rádio Antigo</h5>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="./img/celular.png" class="d-block w-100" alt="celular">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Celular Antigo</h5>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="./img/computador.png" class="d-block w-100" alt="computador">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Computador Antigo</h5>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden"></span>
+            </button>
+        </div>
+    </section>
+
+    <section id="brinquedos" class="container mt-5">
+        <h3>Brinquedos</h3>
+        <p>Os brinquedos da geração Y, nascida entre os anos 1980 e 1990, refletem uma época de transição tecnológica e
+            cultural. Essa geração cresceu brincando com jogos de tabuleiro, videogames clássicos, brinquedos
+            colecionáveis e itens populares como bonecos de ação, brinquedos eletrônicos e produtos inspirados em
+            desenhos animados da época. Logo abaixo estão alguns exemplos.</p> <br>
+
+        <h5 style="font-weight: bold;">1. “Fidgets Toys”:</h5>
+        <p>Você provavelmente já ouviu falar dos "Fidgets Toys", aqueles brinquedos anti-estresse que se tornaram uma
+            febre entre as crianças hoje em dia. No entanto, eles não são tão novos assim: as crianças das décadas de 80
+            e 90 também tinham seus próprios brinquedos pequenos e manuais para se distraírem em viagens de carro ou
+            passeios em família. Esses brinquedos ajudavam a aliviar o estresse, ou, em alguns casos, acabavam causando
+            ainda mais!</p>
+        <img src="./img/fidgetstoys.png" alt="fidgetstoys" width="100%" style="margin: 10px 0 30px 0;">
+
+
+        <h5 style="font-weight: bold;">2. Autorama:</h5>
+        <p>O autorama é uma mini-pista de corrida com faixas fixas onde pequenos carrinhos, parecidos com os de Fórmula
+            1, competem. Considerado um esporte automobilístico, essa atividade continua a atrair entusiastas de
+            velocidade em competições ao redor do mundo.</p>
+        <img src="./img/autorama.png" alt="autorama" width="100%" height="250px" style="margin: 10px 0 30px 0">
+
+
+        <h5 style="font-weight: bold;">3. Pogobol:</h5>
+        <p>Lançado pela Brinquedos Estrela em 1987, fez grande sucesso na década de 1990. É um brinquedo divertido,
+            semelhante a um pula-pula, perfeito para as crianças se divertirem no quintal de casa. Ele tem o formato de
+            uma bola de plástico ou borracha cheia de ar, cortada por um disco reto onde você coloca os pés.</p>
+        <img src="./img/pogobol.png" alt="pogobol" width="100%" style="margin: 10px 0 30px 0;">
+
+
+        <h5 style="font-weight: bold;">4. Moranguinho:</h5>
+        <p>Moranguinho e suas amigas Laranjinha, Uvinha e Maçãzinha têm 15,5 cm de altura, com cabeças de vinil e
+            articulações nos braços, pernas e cabeça. Elas usam vestidos lindos e cheios de detalhes, e cada uma possui
+            um cheirinho doce e irresistível, todos diferentes entre si!</p>
+        <img src="./img/moranguinho.png" alt="" moranguinho width="100%" height="250px" style="margin: 10px 0 30px 0;">
+
+
+        <h5 style="font-weight: bold;">5. Fliperama:</h5>
+        <p>Durante grande parte das décadas de 80 e 90, para jogar os games mais avançados, era comum ir ao fliperama
+            mais próximo. No Brasil, arcade ou fliperama refere-se a máquinas de jogos eletrônicos profissionais,
+            encontradas em estabelecimentos de entretenimento. <br>
+
+            Hoje em dia, os arcades se tornaram itens valiosos entre colecionadores, devido ao seu sistema avançado para
+            a época e ao lugar especial que ocupam na memória de muitos brasileiros. </p>
+        <img src="./img/fliperama.png" alt="fliperama" width="100%" height="250px" style="margin: 10px 0 30px 0;">
+
+
+
+
+        <p style="font-size: 15px; margin-bottom: 0; font-weight: bold;">Por <span style="color: dodgerblue;"> Kauã silva
+                </span>, Em SENAI - Paraguaçu Paulista </p>
+        <div class="data" style="font-size: 12px;">
+            <p>30/08/2024 14:03.</p>
+        </div>
+
+        <p style="font-size: 14px;"><span style="font-size: 16px; font-weight: bold;">Fontes:</span>
+            <a
+                href="https://www.techtudo.com.br/noticias/2017/12/relembre-os-oito-principais-aparelhos-eletronicos-dos-anos-80.ghtml ">https://www.techtudo.com.br/noticias/2017/12/relembre-os-oito-principais-aparelhos-eletronicos-dos-anos-80.ghtml
+            </a>
+    </section>
+
+    <!-- Rodapé -->
+    <div class="footer">
+        <p style="margin: 0; font-weight: bold; font-size: larger;">2DTM</p>
+        <p>SENAI "Shunji Nishimura"</p>
+        <p style="font-size: 12px; display: flex; margin: 0;">@Copyright 2000-2024</p>
+    </div>
+
+    <button id="backToTopBtn" title="Voltar ao Topo">↑</button>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./js/app.js"></script>
+
+    <script>
+        const listItems = document.querySelectorAll('#bordoesList li');
+
+        listItems.forEach(item => {
+            const audio = item.querySelector('audio');
+
+            item.addEventListener('click', () => {
+
+                listItems.forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.classList.remove('expanded');
+                        otherItem.querySelector('audio').pause();
+                        otherItem.querySelector('audio').currentTime = 0;
+                    }
+                });
+
+                item.classList.toggle('expanded');
+
+                if (audio.paused && item.classList.contains('expanded')) {
+                    audio.play();
+                } else {
+                    audio.pause();
+                    audio.currentTime = 0;
+                    item.classList.remove('expanded');
+                }
+
+                // Quando o áudio termina, volta ao estado original
+                audio.addEventListener('ended', () => {
+                    item.classList.remove('expanded');
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

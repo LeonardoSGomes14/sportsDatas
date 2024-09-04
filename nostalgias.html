@@ -1,0 +1,360 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+    <title>Pesquisa da Geração</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="./css/styles.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+</head>
+
+<style>
+    section {
+        padding-top: 70px;
+    }
+
+    .navegation {
+        display: flex;
+        flex-direction: column;
+    }
+
+    ol {
+        list-style: none;
+        counter-reset: list-counter;
+    }
+
+    ol li {
+        counter-increment: list-counter;
+        margin-bottom: 5px;
+    }
+
+    ol li::before {
+        content: counter(list-counter) ". ";
+        font-weight: bold;
+    }
+</style>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-light bg-light fixed-top">
+        <button class="navbar-toggler" type="button" id="navToggle">
+            <span class="navbar-icon"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#f1f1f1"
+                    class="bi bi-list" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                        d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5" />
+                </svg></span>
+        </button>
+        <a class="navbar-brand" href="#" style="font-weight: bold;">Geração Y Millennials 1</a>
+    </nav>
+
+    <!-- Offcanvas -->
+    <div class="offcanvas-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <span class="nav-icon"><img src="./img/icons/journal-text.svg" alt=""></span>
+                <a class="nav-link" href="./caracteristicas.html">Características da geração</a>
+            </li>
+            <li class="nav-item">
+                <span class="nav-icon"><img src="./img/icons/exclamation-triangle.svg" alt=""></span>
+                <a class="nav-link" href="./desafios.html">Desafios enfrentados</a>
+            </li>
+            <li class="nav-item">
+                <span class="nav-icon"><img src="./img/icons/motherboard.svg" alt=""></span>
+                <a class="nav-link" href="./comunicação.html">Tec. da Comunicação</a>
+            </li>
+            <li class="nav-item">
+                <span class="nav-icon"><img src="./img/icons/hypnotize.svg" alt=""></span>
+                <a class="nav-link" href="./nostalgias.html">Nostalgias</a>
+            </li>
+        </ul>
+        <!-- Rodapé do Offcanvas -->
+        <div class="offcanvas-footer">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <span class="nav-icon"><img src="./img/icons/info-circle.svg" alt=""></span>
+                    <a class="nav-link" href="./sobrenos.html">Sobre nós</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Seções -->
+    <section id="nostalgias" class="container mt-5" style="padding-top: 0;">
+        <h3>Nostalgias</h3>
+        <p>Nesse tópico iremos falar sobre as nostalgias (brincadeiras, musicas, desenhos)... da Geração Y,
+            os Millennials. Leia
+            abaixo e aproveite</p>
+
+        <h4>Para onde quer ir?</h4>
+        <div class="navegation">
+            <a href="#brincadeiras">- Brincadeiras</a>
+            <a href="#musicas">- Músicas</a>
+            <a href="#desenhos">- Desenhos animados</a>
+            <a href="#moda">- Moda </a>
+        </div>
+
+        <img src="./img/nostalgia.png" alt="nostalgia" width="100%" style="margin: 20px 0 -80px 0;">
+        </p>
+    </section>
+
+    <section id="brincadeiras" class="container mt-5">
+        <h3>Brincadeiras</h3>
+        <p>Brincadeiras são atividades lúdicas realizadas para diversão e aprendizado. Elas envolvem regras e objetivos
+            que promovem interação social e desenvolvimento físico e mental. Além de entreter, brincadeiras estimulam a
+            criatividade, a coordenação e a cooperação, sendo essenciais para o desenvolvimento de habilidades sociais e
+            cognitivas. Aqui estão alguns exemplos de algumas brincadeiras da época dos Millennials:
+        </p> <br>
+
+        <h5>1. Amarelinha:</h5>
+        <p>Desenho feito no chão com giz ou pedra, onde o jogador deve pular em um pé só nos quadrados individuais e com
+            os dois pés nos quadrados duplos, lançando uma pedra que não pode tocar as linhas do desenho ou cair no
+            quadrado onde o jogador se encontra.</p>
+        <img src="./img/amarelinha.png" alt="amarelinha" width="100%" height="200px" style="margin-bottom: 20px;">
+
+        <h5>2. Pular Corda:</h5>
+        <p>
+            Dois jogadores seguram as extremidades de uma corda longa e a giram, enquanto um ou mais participantes pulam
+            a corda, seja um de cada vez ou todos ao mesmo tempo.</p>
+        <img src="./img/corda.png" alt="corda" width="100%" height="200px" style="margin-bottom: 20px;">
+
+
+        <h5>3. Salve Bandeira ou Bandeirinha:</h5>
+        <p> Dois times competem em seus respectivos campos com o objetivo de capturar a bandeira do time adversário e
+            levá-la de volta ao seu próprio campo sem ser tocado.</p>
+        <img src="./img/bandeira.png" alt="bandeira" width="100%" height="200px" style="margin-bottom: 20px;">
+
+
+        <h5>4. Dança das Cadeiras:</h5>
+        <p>Colocam-se cadeiras em círculo, em número menor que o de participantes. Com a música
+            tocando, os jogadores caminham ao redor das cadeiras. Quando a música para, todos devem tentar sentar-se, e
+            quem
+            não encontrar uma cadeira sai do jogo. A cada rodada, uma cadeira é removida até restar apenas uma cadeira e
+            dois jogadores.</p>
+        <img src="./img/cadeiras.png" alt="cadeiras" width="100%" height="200px" style="margin-bottom: 20px;">
+
+
+        <h5>5. Corrida de Saco:</h5>
+        <p>Os jogadores entram em um saco, que pode ser de estopa, juta ou outro material, até a altura da
+            cintura. O objetivo é pular dentro do saco até a linha de chegada. Ganha quem cruzar a linha primeiro.</p>
+        <img src="./img/saco.png" alt="saco" width="100%" height="200px" style="margin-bottom: 20px;">
+
+
+        <h5>6. Cabra-cega:</h5>
+        <p>Um jogador é escolhido para ser a “cabra-cega” e tem os olhos vendados. Ele deve tentar pegar os
+            outros jogadores usando apenas o tato e a audição, enquanto os demais se movem para evitar ser pegos.</p>
+        <img src="./img/cabra.png" alt="cabra" width="100%" height="200px" style="margin-bottom: 20px;">
+
+
+        <h5>7. Bolinha de Gude ou Bolita:</h5>
+        <p>Jogo em que o objetivo é atirar uma bolinha com o dedo para acertar outras bolinhas
+            dentro de um círculo ou seguir um percurso pré-definido.</p>
+        <img src="./img/gude.png" alt="gude" width="100%" height="200px" style="margin-bottom: 20px;">
+
+
+        <h5>8. Pular Elástico:</h5>
+        <p>Dois jogadores ficam posicionados, um de frente para o outro, com um elástico esticado ao redor
+            de seus tornozelos, formando uma espécie de corda paralela ao chão. Um terceiro jogador deve então pular o
+            elástico de várias maneiras, sem tocá-lo.</p>
+        <img src="./img/elastico.png" alt="elastico" width="100%" height="200px" style="margin-bottom: 20px;">
+
+
+        <h5>9. Cinco Marias:</h5>
+        <p>O objetivo é lançar cinco pedrinhas ou saquinhos pequenos ao ar e apanhá-los de diferentes formas,
+            seguindo uma sequência de movimentos sem deixar nenhum cair.</p>
+        <img src="./img/marias.png" alt="marias" width="100%" height="200px" style="margin-bottom: 20px;">
+
+
+        <h5>10. Passa Anel:</h5>
+        <p>Os participantes sentam-se em círculo com as mãos juntas e viradas para cima. Um jogador é escolhido
+            para ser o portador do anel e finge passá-lo de mão em mão, mas deixa o anel na mão de alguém sem os outros
+            perceberem. Depois, os demais devem adivinhar em qual mão está o anel.</p>
+        <img src="./img/passaanel.png" alt="anel" width="100%" height="200px" style="margin-bottom: -80px;">
+
+
+    </section>
+
+    <section id="musicas" class="container mt-5">
+        <h3>Músicas</h3>
+        <p>
+            Músicas são formas de expressão sonora que combinam ritmo, melodia e harmonia para criar experiências
+            auditivas agradáveis e emocionantes. Elas desempenham um papel fundamental na cultura e no entretenimento,
+            influenciando o estado de espírito, a memória e a identidade. Além de proporcionar prazer e relaxamento, a
+            música também pode transmitir emoções, contar histórias e conectar pessoas. Abaixo alguns estilos de músicas
+            escudados
+            pela Geração Y :</p> <br>
+
+        <h5>Pop:</h5>
+        <p>O pop foi o estilo predominante nos anos 80, com artistas como Michael Jackson, Madonna, Whitney Houston e
+            Prince alcançando grande sucesso e influência na época. </p>
+
+        <h5>Rock:</h5>
+        <p>O rock também deixou sua marca significativa nos anos 80, com bandas como Guns N' Roses, U2, Bon Jovi, AC/DC
+            e Metallica alcançando enorme popularidade durante a década.</p>
+
+        <h5>New Wave:</h5>
+        <p>O new wave surgiu nos anos 80 como um estilo que misturava elementos de rock, punk e eletrônica. Artistas
+            proeminentes desse gênero incluíram Depeche Mode, Duran Duran, The Cure e New Order. </p>
+
+        <h5>Hip Hop:</h5>
+        <p>O hip hop teve um impacto marcante nos anos 80, com grupos como Run-DMC, Public Enemy e Beastie Boys ajudando
+            a popularizar o gênero. </p>
+
+        <h5>R&B:</h5>
+        <p>O R&B (rhythm and blues) também brilhou nos anos 80, com artistas como Whitney Houston, Michael Jackson,
+            Lionel Richie e Luther Vandross se tornando ícones desse estilo musical.</p>
+
+        <p style="margin-bottom: -80px;">Os anos 80 foram cruciais para a música jovem brasileira, preenchendo o espaço
+            deixado pelos gêneros
+            Tropicália e MPB. O pop-rock emergiu como a nova voz da juventude, expressando seus sentimentos e
+            experiências. Surgiram então bandas marcantes como Legião Urbana, Titãs, Paralamas do Sucesso, Barão
+            Vermelho, Capital Inicial, Biquíni Cavadão e Kid Abelha (anteriormente Kid Abelha e os Abóboras Selvagens).
+            Também se destacaram Blitz, Ira!, Lobão e os Ronaldos, Nenhum de Nós, e João Penca e seus Miquinhos
+            Amestrados, revelando talentos como Cazuza e Renato Russo. </p>
+
+
+    </section>
+
+    <section id="desenhos" class="container mt-5">
+        <h3>Desenhos animados</h3>
+        <p>Esse período foi um verdadeiro marco, tanto para os desenhos animados quanto para as séries de TV, que ainda
+            são lembradas com afeto e saudade por quem cresceu assistindo a esses programas emblemáticos. Os
+            personagens, enredos e músicas desses shows se integraram à cultura popular, impactando gerações e moldando
+            a indústria do entretenimento. </p>
+
+        <ol style="margin-bottom: -80px;">
+            <li>Os Cavaleiros do Zodíaco</li>
+            <li>ThunderCats</li>
+            <li>Caverna de Dragão</li>
+            <li>He-Man e os Defensores do Universo</li>
+            <li>DuckTales: Os Caçadores de Aventuras</li>
+            <li>Dragon Ball</li>
+            <li>Ursinhos Carinhosos</li>
+            <li>As Tartarugas Ninja</li>
+            <li>Inspetor Bugiganga</li>
+            <li>Cavalo de Fogo</li>
+            <li>Os Simpsons</li>
+            <li>Smurfs</li>
+            <li>She-Ra e a Princesa do Poder</li>
+            <li>Os Caça-Fantasmas</li>
+            <li>Garfield e seus Amigos</li>
+        </ol>
+    </section>
+
+    <section id="moda" class="container mt-5">
+        <h3>Moda</h3>
+        <p>Os anos 80 eram conhecidos por suas cores vibrantes e neon, que dominaram a moda até 1990. Também roupas
+            "all-black" dominavam a área. Logo abaixo estão alguns exemplos.</p> <br>
+
+        <h5 style="font-weight: bold;">1. Punk:</h5>
+        <p>O movimento punk, que surgiu no final dos anos 70 e início dos anos 80, trouxe uma visão pessimista sobre a
+            sociedade, associando-se a um anarquismo político. Caracterizado por jaquetas de couro, camisetas de bandas,
+            calças jeans surradas e calçados como tênis ou botas, o estilo punk também influenciou a moda das
+            passarelas, com o uso marcante de couro, correntes, e as cores preto e vermelho. </p>
+        <img src="./img/punk.png" alt="punk" width="100%" style="margin: 10px 0 30px 0;">
+
+
+        <h5 style="font-weight: bold;">2. Fitness:</h5>
+        <p>Na década de 1980, a moda fitness foi fortemente influenciada pela cultura pop e pelo estilo aeróbico. Roupas
+            brilhantes, leggings justas, tops cortados e shorts de cintura alta eram comuns. Marcas como Adidas e Nike
+            começaram a dominar o mercado, introduzindo inovações em tecidos e designs. A moda fitness desse período
+            também foi marcada por tons coloridos e chamativos, além de estampas psicodélicas e tecidos leves e
+            elásticos, garantindo liberdade de movimento e refletindo a influência da contracultura.</p>
+        <img src="./img/fitnees.png" alt="fitnees" width="100%" height="250px" style="margin: 10px 0 30px 0">
+
+
+        <h5 style="font-weight: bold;">3. Jaqueta de Couro:</h5>
+        <p>A jaqueta de couro, popularizada pela cultura rock, tem suas origens no início do século XX, quando foi
+            utilizada como uniforme para pilotos de avião durante a Primeira Guerra Mundial. Ela protegia os pilotos do
+            frio e do vento, além de ser resistente a rasgos e perfurações. <br><br>
+            Com o tempo, a jaqueta de couro passou por diversas transformações e ganhou destaque entre músicos e fãs de
+            rock. Entre as décadas de 1960 e 1980, tornou-se um item icônico no guarda-roupa de bandas como Elvis
+            Presley e Ramones. Nos anos 1980, a jaqueta de couro se tornou especialmente popular entre os fãs de heavy
+            metal, sendo usada por bandas como Metallica e Iron Maiden. Durante esse período, os modelos perfecto e
+            oversized de shape arredondado estavam em alta. </p>
+        <img src="./img/jaqueta.png" alt="jaqueta" width="100%" style="margin: 10px 0 30px 0;">
+
+
+        <h5 style="font-weight: bold;">4. Streerwear:</h5>
+        <p>O street wear é um estilo que começou na década de 1970 na Califórnia, refletindo a cultura e a vivência dos
+            jovens urbanos. Inicialmente influenciado pelo surf (A influência naquela época era o cotidiano baseado no
+            surf, fazendo com que as roupas trouxessem muito dessa inspiração nas estampas, nos cortes e nas
+            modelagens.) O estilo evoluiu nos anos 1980 com a ascensão do skate e do hip-hop, incorporando elementos de
+            grafite e dança. A marca Stüssy, considerada a primeira do gênero, ajudou a definir essa estética. </p>
+        <img src="./img/street.png" alt="street" moranguinho width="100%" height="250px" style="margin: 10px 0 30px 0;">
+
+
+        <h5 style="font-weight: bold;">5. Mangas Bufantes/Cintos Largos :</h5>
+        <p>Influenciados pelo estilo extravagante dos anos 80, grandes designers trazem referências dessa época em suas
+            criações atuais e modernas, voltadas para quem tem muita personalidade e estilo.
+            <br><br>
+            No cenário da moda, elementos como cintos largos, mangas bufantes e saias balonê anteciparam as tendências
+            internacionais desenvolvidas pela Saint Laurent.
+        </p>
+        <img src="./img/estravagante.png" alt="estravagante" width="100%" height="250px" style="margin: 10px 0 30px 0;">
+
+        <h5 style="font-weight: bold;">6. Maiôs / Moda de Praia:</h5>
+        <p>A partir de 1980, houve um verdadeiro marco na história dos maiôs. Nesse ano, os modelos lisos, especialmente
+            em cores neon, passaram a compor os looks usados em festas à beira de piscinas, tornando-se peças
+            glamourosas para criar visuais mais elegantes.
+            <br><br>
+            O Brasil, sendo um país tropical com temperaturas elevadas e mulheres extremamente empoderadas, não ficou
+            para trás nessa tendência e foi responsável pela criação da famosa "tanga" nos anos 70.
+        </p>
+        <img src="./img/praia.png" alt="praia" width="100%" height="250px" style="margin: 10px 0 30px 0;">
+
+        <p style="font-size: 15px; margin-bottom: 0; font-weight: bold;">Por <span style="color: dodgerblue;"> Kauã Silva
+              </span>, Em SENAI - Paraguaçu Paulista</p>
+        <div class="data" style="font-size: 12px;">
+            <p>30/08/2024 14:03.</p>
+        </div>
+
+        <p style="font-size: 14px;"><span style="font-size: 16px; font-weight: bold;">Fontes:</span>
+            <a
+                href="https://www.revistabula.com/18465-40-brincadeiras-que-so-fazem-sentido-para-quem-cresceu-nos-anos-1980-e-1990/">https://www.revistabula.com/18465-40-brincadeiras-que-so-fazem-sentido-para-quem-cresceu-nos-anos-1980-e-1990/</a><br>
+            <a
+                href="https://muralzinhodeideias.com.br/nostalgia-brinquedos-que-marcaram-os-anos-80-e-90/">https://muralzinhodeideias.com.br/nostalgia-brinquedos-que-marcaram-os-anos-80-e-90/</a><br>
+            <a
+                href="https://www.letras.mus.br/blog/musicas-nacionais-anos-80/">https://www.letras.mus.br/blog/musicas-nacionais-anos-80/</a><br>
+            <a
+                href="https://www.maioresemelhores.com/desenhos-dos-anos-80/ https://exame.com/pop/relembre-os-desenhos-e-series-que-fizeram-sucesso-nos-anos-80/">https://www.maioresemelhores.com/desenhos-dos-anos-80/
+                https://exame.com/pop/relembre-os-desenhos-e-series-que-fizeram-sucesso-nos-anos-80/</a>
+        </p>
+    </section>
+
+    <!-- Rodapé -->
+    <div class="footer">
+        <p style="margin: 0; font-weight: bold; font-size: larger;">2DTM</p>
+        <p>SENAI "Shunji Nishimura"</p>
+        <p style="font-size: 12px; display: flex; margin: 0;">@Copyright 2000-2024</p>
+    </div>
+
+    <button id="backToTopBtn" title="Voltar ao Topo">↑</button>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script src="./js/app.js"></script>
+</body>
+
+</html>

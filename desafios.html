@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+    <title>Pesquisa da Geração</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="./css/styles.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+</head>
+
+<style>
+    .accordion-button {
+        width: 100%;
+        transition: 0.3s;
+        display: flex;
+        justify-content: space-between;
+        padding: 5px 10px;
+        border-radius: 5px;
+    }
+
+    #ulDesafios li {
+        margin-bottom: 10px;
+    }
+
+    .accordion-button.collapsed .icon {
+        transform: rotate(-180deg);
+        transition: 0.3s ease-in;
+    }
+
+    .accordion-button .icon {
+        transition: 0.3s ease-in;
+    }
+</style>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-light bg-light fixed-top">
+        <button class="navbar-toggler" type="button" id="navToggle">
+            <span class="navbar-icon"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#f1f1f1"
+                    class="bi bi-list" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                        d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5" />
+                </svg></span>
+        </button>
+        <a class="navbar-brand" href="#" style="font-weight: bold;">Geração Y Millennials 1</a>
+    </nav>
+
+    <!-- Offcanvas -->
+    <div class="offcanvas-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <span class="nav-icon"><img src="./img/icons/journal-text.svg" alt=""></span>
+                <a class="nav-link" href="./caracteristicas.html">Características da geração</a>
+            </li>
+            <li class="nav-item">
+                <span class="nav-icon"><img src="./img/icons/exclamation-triangle.svg" alt=""></span>
+                <a class="nav-link" href="./desafios.html">Desafios enfrentados</a>
+            </li>
+            <li class="nav-item">
+                <span class="nav-icon"><img src="./img/icons/motherboard.svg" alt=""></span>
+                <a class="nav-link" href="./comunicação.html">Tec. da Comunicação</a>
+            </li>
+            <li class="nav-item">
+                <span class="nav-icon"><img src="./img/icons/hypnotize.svg" alt=""></span>
+                <a class="nav-link" href="./nostalgias.html">Nostalgias</a>
+            </li>
+        </ul>
+        <!-- Rodapé do Offcanvas -->
+        <div class="offcanvas-footer">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <span class="nav-icon"><img src="./img/icons/info-circle.svg" alt=""></span>
+                    <a class="nav-link" href="./sobrenos.html">Sobre nós</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Seções -->
+    <section id="desafios" class="container mt-5">
+        <h3>Desafios enfrentados</h3>
+        <p>Nesse tópico iremos falar sobre alguns desafios que foram enfrentados pela Geração Y, os Millennials. Leia
+            abaixo e aproveite.</p>
+
+        <div class="accordion accordion-flush" id="accordionFlushExample"
+            style="background-color: #f1f1f1; border-radius: 10px; margin: 20px 0;">
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                        Resumo
+                        <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25"
+                                fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
+                                <path
+                                    d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z" />
+                            </svg></div>
+                    </button>
+                </h2>
+                <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body" style="padding: 0 10px;">
+                        <ul style="margin-left: 20px;" id="ulDesafios">
+                            <li>Nos anos 1980, a América Latina viveu a chamada “década perdida” na economia, com
+                                indicadores como PIB, inflação e emprego apresentando resultados fracos. No Brasil, a
+                                desaceleração foi severa, mas, no campo político, houve avanços significativos, como o
+                                fim da ditadura e a promulgação da Constituição de 1988.
+                            </li> <br>
+
+                            <li>A pandemia de AIDS/HIV começou a se espalhar no início dos anos 1980. No Brasil, o
+                                primeiro caso foi registrado em 1983, com a doença inicialmente estigmatizada e a
+                                resposta governamental limitada. Com o tempo, houve avanços em testes, tratamentos e
+                                campanhas de prevenção.</li> <br>
+
+                            <li>A crise econômica dos anos 1980 no Brasil foi marcada por alta inflação e aumento da
+                                dívida pública. Planos econômicos como o Plano Cruzado (1986), Plano Bresser (1987) e
+                                Plano Verão (1989) tentaram, sem sucesso duradouro, estabilizar a economia.</li> <br>
+
+                            <li>Os anos 1980 também foram marcados por conflitos e eventos globais significativos, como
+                                a independência do Zimbábue, a Guerra das Malvinas, o fim da Guerra Irã-Iraque, a
+                                retirada soviética do Afeganistão, a Guerra do Alto Carabaque e a queda do Muro de
+                                Berlim, que simbolizou o fim da Guerra Fria.</li> <br>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <h3>Crise Econômica</h3>
+
+        <div class="image">
+            <img src="./img/decadaPerdida.png" alt="" style="width: 100%; margin-bottom: 20px;">
+        </div>
+
+        <p>Nos anos 1980, a América Latina experimentou o que ficou conhecido como “a década perdida” no âmbito
+            econômico. Os indicadores econômicos, que incluem taxas de crescimento do PIB, inflação, produção
+            industrial, poder de compra dos salários, nível de emprego e balanço de pagamentos, apresentaram resultados
+            medíocres. No Brasil, a desaceleração econômica foi particularmente severa, resultando em uma queda
+            acentuada em relação às médias de crescimento dos cinquenta anos anteriores.No entanto, do ponto de vista
+            político, os anos 1980 foram uma década de avanços significativos. Durante esse período, surgiram e se
+            consolidaram diversas entidades e partidos populares, resultado das maiores mobilizações sociais da história
+            brasileira. Além disso, o Brasil entrou em uma nova fase histórica com o fim da ditadura e a promulgação da
+            Constituição de 1988. <br><br>
+
+        <h3>Pandemia de AIDS/HIV</h3>
+
+        No início dos anos 1980, o HIV (Vírus da Imunodeficiência Humana) e a AIDS (Síndrome da Imunodeficiência
+        Adquirida) começaram a ser identificados. Inicialmente, a doença foi associada a grupos específicos, como
+        homossexuais e usuários de drogas injetáveis, o que levou a um estigma significativo e a uma resposta
+        inicial limitada. Com o tempo, a epidemia se espalhou para outras populações e regiões, incluindo a África
+        Subsariana, onde teve um impacto particularmente devastador. Nos primeiros anos, a resposta global foi
+        ineficaz devido à falta de conhecimento sobre o vírus e à resistência em lidar com a questão devido ao
+        estigma. No entanto, a situação começou a mudar à medida que a compreensão sobre o HIV avançou, levando ao
+        desenvolvimento de testes, tratamentos e campanhas de prevenção. <br><br>
+
+        <img src="./img/aids.png" alt="" style="width: 100%;"><br><br>
+
+        O primeiro caso de AIDS no Brasil foi registrado em 1983. O surto rapidamente se espalhou, afetando
+        principalmente homossexuais e usuários de drogas injetáveis. A resposta inicial do governo e das autoridades
+        de saúde foi limitada, marcada por falta de recursos e conhecimento adequado. A estigmatização e a
+        desinformação contribuíram para a discriminação e o silêncio em torno da doença, afetando profundamente a
+        vida das pessoas acometidas. <br><br>
+
+        <h3>Crise Econômica e Inflação</h3>
+
+        Na década de 1970, após um breve período de estabilização, os gastos públicos do governo cresceram
+        exponencialmente, acompanhados por um aumento no endividamento externo. Segundo um estudo de um núcleo de
+        pesquisa da UFRJ, os empréstimos estrangeiros eram baseados em juros flutuantes, que variam conforme as
+        condições econômicas. <br><br>
+
+        O problema surgiu quando o preço do petróleo aumentou consideravelmente em alguns momentos da década,
+        resultando em reajustes globais. Além disso, o aumento das taxas de juros nos Estados Unidos tornou mais
+        atraente para os investidores aplicar seus recursos lá, em vez de no Brasil, o que provocou uma fuga de
+        capitais do país. Após o superendividamento, a economia entrou em um ciclo de declínio. Em 1981, o governo
+        implementou um programa de estabilização econômica, que, no entanto, falhou. As dívidas já eram
+        excessivamente altas e, temendo um calote, o FMI interrompeu os empréstimos. <br><br>
+
+        <img src="./img/crise.png" alt="" style="width: 100%; margin: 20px 0;">
+
+        Diante da falta de recursos para honrar as dívidas, a solução foi emitir títulos da dívida pública para que
+        investidores pudessem adquiri-los. Com juros extremamente elevados, essa medida visava atrair investidores
+        dispostos a assumir o alto risco. <br><br>
+
+        Comprometer as finanças com juros altos, vinculados à inflação, foi um erro grave que custaria caro ao
+        Brasil. A dívida interna saltou para 50% do PIB, aumentando ainda mais os prazos de pagamento. Pesquisadores
+        apontam que isso ilustra a falta de crédito do país e a completa estagnação econômica. <br><br>
+
+        A consequência dos títulos públicos com juros elevados foi a migração dos investimentos do setor privado
+        para o setor público, devido à sua alta rentabilidade. Isso levou ao aumento do desemprego, uma vez que os
+        investimentos na indústria diminuíram. Esse cenário criou uma bola de neve que, eventualmente, resultou em
+        hiperinflação. <br><br>
+
+        Na intenção de melhora da situação crítica da economia brasileira, elaborou-se alguns planos econômicos:
+        <br><br>
+
+        <span style="font-weight: bold;">Plano Cruzado (1986):</span> Introduzido pelo governo de José Sarney e
+        elaborado pelo economista João Paulo dos
+        Reis Velloso, o Plano Cruzado tentou estabilizar a economia por meio da criação de uma nova moeda, o
+        cruzado, e o congelamento de preços e salários. Embora tenha inicialmente trazido alguma estabilização, o
+        plano acabou falhando devido a problemas estruturais e ao retorno da inflação. <br><br>
+
+        <span style="font-weight: bold;">Plano Bresser (1987):</span> O Plano Bresser, implementado pelo então ministro
+        da Fazenda, Luiz Carlos
+        Bresser-Pereira, buscou controlar a inflação por meio de uma série de reformas econômicas, incluindo o
+        ajuste fiscal e o controle dos preços. No entanto, o plano não conseguiu resolver o problema da inflação de
+        maneira duradoura. <br><br>
+
+        <span style="font-weight: bold;">Plano Verão (1989):</span> O Plano Verão, implementado pelo governo de José
+        Sarney e elaborado por Maílson da
+        Nóbrega, introduziu uma nova moeda, o "cruzeiro", e buscou controlar a inflação por meio de uma política de
+        estabilização monetária. Embora tenha tido algum sucesso inicial, o problema da inflação não foi
+        completamente resolvido. <br><br>
+
+        <ul style="margin-left: 20px;" id="ulDesafios">
+            <li>Em 1980, o Zimbábue conquistou sua independência do Reino Unido.
+            </li>
+
+            <li> Em 2 de abril de 1982, a Argentina invadiu as Ilhas Malvinas, iniciando a Guerra das Malvinas entre a
+                Argentina e a Grã-Bretanha.</li>
+
+            <li> Em 1988, terminou a guerra entre Irã e Iraque, um conflito de oito anos que começou em 1980 e foi
+                marcado
+                por intensos combates terrestres e ataques aéreos.</li>
+
+            <li> Em 5 de fevereiro de 1989, a União Soviética retirou suas tropas da Guerra do Afeganistão.</li>
+
+            <li> Em 1988, começou a Guerra do Alto Carabaque entre a Armênia e o Azerbaijão, que só terminou em 1994.
+            </li>
+
+            <li> Em 9 de novembro de 1989, ocorreu a queda do Muro de Berlim, um ato simbólico que sinalizou o fim da
+                Guerra
+                Fria.</li>
+        </ul>
+
+        <h3>Alguns acontecimentos no mundo e no Brasil:</h3>
+        <ul style="margin-left: 20px;" id="ulDesafios">
+            <li>Em 1980, o Zimbábue conquistou sua independência do Reino Unido.</li>
+            <li>Em 2 de abril de 1982, a Argentina invadiu as Ilhas Malvinas, iniciando a Guerra das Malvinas entre a
+                Argentina
+                e a Grã-Bretanha.</li>
+            <li>Em 1988, terminou a guerra entre Irã e Iraque, um conflito de oito anos que começou em 1980 e foi
+                marcado por
+                intensos combates terrestres e ataques aéreos.</li>
+            <li>Em 5 de fevereiro de 1989, a União Soviética retirou suas tropas da Guerra do Afeganistão.</li>
+            <li>Em fevereiro de 1980, foi fundado o PT (Partido dos Trabalhadores) em São Paulo.</li>
+            <li>Em 1981, Rondônia deixou de ser um território e se tornou um estado da federação brasileira.</li>
+            <li>Em 1984, surgiu o movimento Diretas Já, que clamava pelo retorno das eleições diretas para a presidência
+                do
+                Brasil.
+            </li>
+            <li>Em 1985, Tancredo Neves foi eleito presidente do Brasil de forma indireta, mas faleceu antes de tomar
+                posse. O
+                vice-presidente José Sarney assumiu o cargo, marcando o fim da Ditadura Militar no Brasil.
+            </li>
+            <li>Em 1986, começou o processo de integração europeia com a criação da União Europeia.</li>
+            <li>Em 1988, Amapá e Roraima foram elevados à categoria de estados brasileiros, deixando de ser territórios.
+            </li>
+            <li>Em 5 de outubro de 1988, foi promulgada a Constituição Brasileira, que está em vigor até hoje.</li>
+            <li>Em outubro de 1988, foi criado o estado de Tocantins.</li>
+        </ul>
+        </p>
+
+        <p style="font-size: 15px; margin-bottom: 0; font-weight: bold;">Por <span style="color: dodgerblue;">Kauã Silva
+                </span>, Em SENAI - Paraguaçu Paulista</p>
+        <div class="data" style="font-size: 12px;">
+            <p>30/08/2024 14:03.</p>
+        </div>
+
+        <p style="font-size: 14px;"><span style="font-size: 16px; font-weight: bold;">Fontes:</span>
+            <a href="https://querobolsa.com.br/revista/geracao-y">https://querobolsa.com.br/revista/geracao-y</a>
+        </p>
+    </section>
+
+    <!-- Rodapé -->
+    <div class="footer">
+        <p style="margin: 0; font-weight: bold; font-size: larger;">2DTM</p>
+        <p>SENAI "Shunji Nishimura"</p>
+        <p style="font-size: 12px; display: flex; margin: 0;">@Copyright 2000-2024</p>
+    </div>
+
+    <button id="backToTopBtn" title="Voltar ao Topo">↑</button>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./js/app.js"></script>
+</body>
+
+</html>
