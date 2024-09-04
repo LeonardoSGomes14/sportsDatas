@@ -1,12 +1,12 @@
 let alunos = [
-    { id: 1, nome: "an", foto: "./img/alunos/NI.png", dataNascimento: "--/--/----" },
-    { id: 2, nome: "an", foto: "./img/alunos/NI.png", dataNascimento: "--/--/----" },
-    { id: 3, nome: "an", foto: "./img/alunos/.jpg", dataNascimento: "30/10/2006" },
-    { id: 4, nome: "an", foto: "./img/alunos/.jpg", dataNascimento: "21/05/2007" },
-    { id: 5, nome: "an", foto: "./img/alunos/.jpg", dataNascimento: "07/05/2007" },
-    { id: 6, nome: "an", foto: "./img/alunos/.jpg", dataNascimento: "27/09/2006" },
-    { id: 7, nome: "an", foto: "./img/alunos/.jpg", dataNascimento: "24/02/2006" },
-    { id: 8, nome: "an", foto: "./img/alunos/.png", dataNascimento: "25/11/2006" },
+    { id: 1, nome: "Kauã", foto: "./img/alunos/kaua.png", dataNascimento: "22/01/2006" },
+    { id: 2, nome: "Leonardo", foto: "./img/alunos/leo.jfif", dataNascimento: "14/11/2006" },
+    { id: 3, nome: "Oliveira", foto: "./img/alunos/oliveira.png", dataNascimento: "15/02/2006" },
+    { id: 4, nome: "Maria", foto: "./img/alunos/duda.png", dataNascimento: "17/07/2006" },
+    { id: 5, nome: "Ruana", foto: "./img/alunos/ruana.png", dataNascimento: "26/09/2006" },
+    { id: 6, nome: "Livia", foto: "./img/alunos/silvao.png", dataNascimento: "21/08/2006" },
+    { id: 7, nome: "Evellin", foto: "./img/alunos/evellin.png", dataNascimento: "28/06/2006" },
+    { id: 8, nome: "Camilly", foto: "./img/alunos/camilly.jfif", dataNascimento: "07/08/2006" },
    
 ];
 
