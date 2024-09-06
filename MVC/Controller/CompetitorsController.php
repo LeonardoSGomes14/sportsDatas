@@ -1,18 +1,18 @@
 <?php
-require_once 'C:\xampp\htdocs\SportData\sportsDatas\MVC\Model\CompetitorsModel.php';
+require_once 'C:\xampp\htdocs\sportsDatas\MVC\Model\CompetitorModel.php';
 
-class competitorController
+class CompetitorController
 {
     private $competitormodel;
 
     public function __construct($pdo)
     {
-        $this->competitormodel = new competitorModel($pdo);
+        $this->competitormodel = new CompetitorModel($pdo);
     }
 
-    public function createCompetitor($name)
+    public function createCompetitor($name, $age, $height, $weight, $gender, $cpf, $rg, $team)
     {
-        $this->competitormodel->createCompetitor($name);
+        $this->competitormodel->createCompetitor($name, $age, $height, $weight, $gender, $cpf, $rg, $team);
     }
 
     public function listCompetitors()
@@ -20,21 +20,19 @@ class competitorController
         return $this->competitormodel->listCompetitors();
     }
 
-    public function showcompetitorsList()
+    public function showCompetitorsList()
     {
-        $competitors = $this->competitormodel->listcompetitors();
-        include 'C:\xampp\htdocs\SportData\sportsDatas\MVC\View\Competitors\view.php';
+        $competitors = $this->listCompetitors();
+        include 'C:\xampp\htdocs\sportsDatas\View\Competitors\view.php'; // Inclua a view
     }
 
-    public function updatecompetitor($id_competitor, $name)
+    public function updateCompetitor($id_competitor, $name, $age, $height, $weight, $gender, $cpf, $rg, $team)
     {
-        $this->competitormodel->updatecompetitor($id_competitor, $name);
+        $this->competitormodel->updateCompetitor($id_competitor, $name, $age, $height, $weight, $gender, $cpf, $rg, $team);
     }
 
-    
-    public function deletecompetitor($id_competitor)
+    public function deleteCompetitor($id_competitor)
     {
-        $this->competitormodel->deletecompetitor($id_competitor);
+        $this->competitormodel->deleteCompetitor($id_competitor);
     }
-
 }
