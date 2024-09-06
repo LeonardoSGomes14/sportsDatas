@@ -8,7 +8,7 @@ if (isset($_GET['id'])) {
     $sportId = $_GET['id'];
     $sports = $controller->listSports();
     
-    // Busca o esporte específico
+    
     $sport = null;
     foreach ($sports as $s) {
         if ($s['id_sport'] == $sportId) {
