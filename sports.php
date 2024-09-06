@@ -90,7 +90,7 @@ $sports = $controller->listSports();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Esportes</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Opcional: para adicionar estilos -->
+    <link rel="stylesheet" href="styles.css"> 
 </head>
 <body>
    
