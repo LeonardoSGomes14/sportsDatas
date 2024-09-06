@@ -1,6 +1,7 @@
 <?php
-require_once 'C:\xampp\htdocs\sportsDatas\db\config.php';  // Caminho para o config.php
-require_once 'C:\xampp\htdocs\sportsDatas\MVC\Controller\SportsController.php';  // Caminho para o SportsController.php
+require_once 'db\config.php';
+require_once 'MVC\Controller\SportsController.php';  // Caminho para o SportsController.php
+require_once 'MVC\Model\SportModel.php';  // Caminho para o SportsController.php
 
 $controller = new SportsController($pdo);
 $sports = $controller->listSports();  // Obtém a lista de esportes
@@ -52,7 +53,7 @@ $sports = $controller->listSports();  // Obtém a lista de esportes
                 </li>
                 <li class="nav-item">
                     <span class="nav-icon"><img src="./img/icons/exclamation-triangle.svg" alt=""></span>
-                    <a class="nav-link" href="./competidor.php">Cadastrar Competidor </a>
+                    <a class="nav-link" href="./Competidor.php">Cadastrar Competidor </a>
                 </li>
                 <li class="nav-item">
                     <span class="nav-icon"><img src="./img/icons/motherboard.svg" alt=""></span>
@@ -68,7 +69,7 @@ $sports = $controller->listSports();  // Obtém a lista de esportes
                 <ul class="navbar-nav">
                     <li class="nav-item">
                         <span class="nav-icon"><img src="./img/icons/info-circle.svg" alt=""></span>
-                        <a class="nav-link" href="./sobrenos.html">Sobre nós</a>
+                        <a class="nav-link" href="./sobrenos.php">Sobre nós</a>
                     </li>
                 </ul>
             </div>

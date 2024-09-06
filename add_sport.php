@@ -1,6 +1,6 @@
 <?php
-require_once 'C:\xampp\htdocs\sportsDatas\db\config.php';  // Caminho para o config.php
-require_once 'C:\xampp\htdocs\sportsDatas\MVC\Controller\SportsController.php';  // Caminho para o SportsController.php
+require_once 'db\config.php';  // Caminho para o config.php
+require_once 'MVC\Controller\SportsController.php';  // Caminho para o SportsController.php
 
 $controller = new SportsController($pdo);
 

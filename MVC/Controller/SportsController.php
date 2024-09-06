@@ -1,5 +1,5 @@
 <?php
-require_once 'C:\xampp\htdocs\sportsDatas\MVC\Model\SportModel.php';
+require_once 'MVC\Model\SportModel.php';
 
 class SportsController
 {

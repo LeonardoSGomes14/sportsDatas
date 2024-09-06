@@ -1,6 +1,6 @@
 <?php
-require_once 'C:\xampp\htdocs\sportsDatas\db\config.php';
-require_once 'C:\xampp\htdocs\sportsDatas\MVC\Controller\SportsController.php';
+require_once 'db\config.php';
+require_once 'MVC\Controller\SportsController.php';
 
 $controller = new SportsController($pdo);
 

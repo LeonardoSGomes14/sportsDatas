@@ -93,7 +93,7 @@
             <ul class="navbar-nav">
                 <li class="nav-item">
                     <span class="nav-icon"><img src="./img/icons/journal-text.svg" alt=""></span>
-                    <a class="nav-link" href="./sporte.php">Cadastrar Esportes</a>
+                    <a class="nav-link" href="./sports.php">Cadastrar Esportes</a>
                 </li>
                 <li class="nav-item">
                     <span class="nav-icon"><img src="./img/icons/exclamation-triangle.svg" alt=""></span>
@@ -113,7 +113,7 @@
                 <ul class="navbar-nav">
                     <li class="nav-item">
                         <span class="nav-icon"><img src="./img/icons/info-circle.svg" alt=""></span>
-                        <a class="nav-link" href="./sobrenos.html">Sobre nós</a>
+                        <a class="nav-link" href="./sobrenos.php">Sobre nós</a>
                     </li>
                 </ul>
             </div>
