@@ -175,8 +175,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <td><?php echo htmlspecialchars($locale['state']); ?></td>
                     <td><?php echo htmlspecialchars($locale['country']); ?></td>
                     <td>
-                        <a href="update.php?id=<?php echo htmlspecialchars($locale['id_locale']); ?>" class="btn btn-warning btn-sm">Editar</a>
-                        <a href="delete-local.php?id=<?php echo htmlspecialchars($locale['id_locale']); ?>" class="btn btn-danger btn-sm" onclick="return confirm('Tem certeza que deseja excluir este local?');">Excluir</a>
+                    <a href="edit_local.php?id=<?php echo $locale['id_locale']; ?>" class="btn btn-warning btn-sm">Editar</a>
+                    <a href="delete-local.php?id=<?php echo $locale['id_locale']; ?>" class="btn btn-danger btn-sm" onclick="return confirm('Tem certeza que deseja excluir este local?');">Excluir</a>
+
                     </td>
                 </tr>
                 <?php endforeach; ?>

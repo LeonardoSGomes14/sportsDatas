@@ -1,17 +1,21 @@
 <?php
-require_once 'db\config.php';
-require_once 'MVC\Controller\localesController.php';
+require_once 'db/config.php';
+require_once 'MVC/Controller/LocalesController.php';  
+require_once 'MVC/Model/localeModel.php';  
 
 $controller = new LocaleController($pdo);
-$locale = $controller->listLocales();
+
+$locale = null;
+
 if (isset($_GET['id'])) {
     $localesId = $_GET['id'];
-    $locale = $controller->listLocales();
     
-    // Busca o elocalee específico
-    $locale = null;
-    foreach ($locales as $s) {
-        if ($s['id_locale'] == $localeId) {
+    // Busca todos os locais
+    $allLocales = $controller->listLocales();
+    
+    // Verifica se o local específico existe
+    foreach ($allLocales as $s) {
+        if ($s['id_locale'] == $localesId) {
             $locale = $s;
             break;
         }
@@ -25,67 +29,78 @@ if (isset($_GET['id'])) {
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $id_locale = $_POST['id_locale'];
-    $modality = $_POST['modality'];
-    $olimpic_year = $_POST['olimpic_year'];
+    $street = $_POST['street'];
+    $neighborhood = $_POST['neighborhood'];
+    $number = $_POST['number'];
+    $cep = $_POST['cep'];
+    $city = $_POST['city'];
+    $state = $_POST['state'];
+    $country = $_POST['country'];
 
-    $controller->updateLocale($id_locale, $rua, $bairro, $numero, $cep, $cidade, $estado, $pais);
+    $controller->updateLocale($id_locale, $street, $neighborhood, $number, $cep, $city, $state, $country);
     
-    echo '<!DOCTYPE html>
-          <html lang="pt-br">
-          <head>
-              <meta charset="UTF-8">
-              <meta name="viewport" content="width=device-width, initial-scale=1.0">
-              <title>Redirecionando...</title>
-          </head>
-          <body>
-              <script type="text/javascript">
-                  window.onload = function() {
-                      // Redireciona para a página principal
-                      window.location.href = "local.php";
-                  }
-              </script>
-          </body>
-          </html>';
+    header('Location: local.php');
     exit(); 
 }
 ?>
 
-<!DOCTYPE html>
-<html lang="pt-br">
+<!doctype html>
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editar Local</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/styles.css">
 </head>
 <body>
-    <h1>Editar Local</h1>
+    <div class="container mt-5">
+        <h1>Editar Local</h1>
+        
+        <?php if ($locale): ?>
+        <form method="post">
+            <input type="hidden" name="id_locale" value="<?php echo htmlspecialchars($locale['id_locale']); ?>">
 
-    <form action="edit_local.php" method="POST">
-        <input type="hidden" name="id_locale" value="<?php echo $locale['id_locale']; ?>">
-
-        <label for="street">Rua:</label>
-        <input type="text" name="street" id="street" value="<?php echo $locale['street']; ?>" required>
-
-        <label for="neighborhood">Bairro:</label>
-        <input type="text" name="neighborhood" id="neighborhood" value="<?php echo $locale['neighborhood']; ?>" required>
-
-        <label for="number">Número:</label>
-        <input type="text" name="number" id="number" value="<?php echo $locale['number']; ?>" required>
-
-        <label for="cep">Cep:</label>
-        <input type="number" name="cep" id="cep" value="<?php echo $locale['cep']; ?>" required>
-
-        <label for="city">Cidade:</label>
-        <input type="text" name="city" id="city" value="<?php echo $locale['city']; ?>" required>
-
-        <label for="state">Estado:</label>
-        <input type="text" name="state" id="state" value="<?php echo $locale['state']; ?>" required>
-
-        <label for="country">country:</label>
-        <input type="text" name="country" id="country" value="<?php echo $locale['country']; ?>" required>
-
-
-        <button type="submit">Salvar Alterações</button>
-    </form>
+            <div class="form-group">
+                <label for="street">Rua:</label>
+                <input type="text" class="form-control" id="street" name="street" value="<?php echo htmlspecialchars($locale['street']); ?>" required>
+            </div>
+            <div class="form-group">
+                <label for="neighborhood">Bairro:</label>
+                <input type="text" class="form-control" id="neighborhood" name="neighborhood" value="<?php echo htmlspecialchars($locale['neighborhood']); ?>" required>
+            </div>
+            <div class="form-group">
+                <label for="number">Número:</label>
+                <input type="number" class="form-control" id="number" name="number" value="<?php echo htmlspecialchars($locale['number']); ?>" required>
+            </div>
+            <div class="form-group">
+                <label for="cep">Cep:</label>
+                <input type="text" class="form-control" id="cep" name="cep" value="<?php echo htmlspecialchars($locale['cep']); ?>" required>
+            </div>
+            <div class="form-group">
+                <label for="city">Cidade:</label>
+                <input type="text" class="form-control" id="city" name="city" value="<?php echo htmlspecialchars($locale['city']); ?>" required>
+            </div>
+            <div class="form-group">
+                <label for="state">Estado:</label>
+                <input type="text" class="form-control" id="state" name="state" value="<?php echo htmlspecialchars($locale['state']); ?>" required>
+            </div>
+            <div class="form-group">
+                <label for="country">País:</label>
+                <input type="text" class="form-control" id="country" name="country" value="<?php echo htmlspecialchars($locale['country']); ?>" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Salvar Alterações</button>
+        </form>
+        <?php else: ?>
+        <p>Local não encontrado!</p>
+        <?php endif; ?>
+    </div>
+    
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 </html>

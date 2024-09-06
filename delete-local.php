@@ -1,27 +1,24 @@
 <?php
-require_once 'db\config.php';
-require_once 'MVC\Controller\localesController.php';
+require_once 'db/config.php';
+require_once 'MVC/Controller/LocalesController.php';
+require_once 'MVC/Model/localeModel.php';
 
-$controller = new LocaleController($pdo);
-
+// Verifica se o parâmetro 'id' está presente na URL
 if (isset($_GET['id'])) {
     $id_locale = $_GET['id'];
-    $controller->deleteLocale($id_sport);
-    echo '<!DOCTYPE html>
-    <html lang="pt-br">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Redirecionando...</title>
-    </head>
-    <body>
-        <script type="text/javascript">
-            window.onload = function() {
-                // Redireciona para a página principal
-                window.location.href = "local.php";
-            }
-        </script>
-    </body>
-    </html>';
-exit(); 
+
+    // Cria uma instância do controlador e modelo
+    $controller = new LocaleController($pdo);
+
+    // Chama a função para excluir o local
+    $controller->deleteLocale($id_locale);
+
+    // Redireciona de volta para a página de listagem
+    header("Location: local.php");
+    exit();
+} else {
+    // Caso o parâmetro 'id' não esteja presente, redireciona para a página de listagem
+    header("Location: local.php");
+    exit();
 }
+?>

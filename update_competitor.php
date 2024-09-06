@@ -1,5 +1,5 @@
 <?php
-require_once 'C:\xampp\htdocs\sportsDatas\db\config.php'; // Ajuste o caminho conforme necessário
+require_once 'db\config.php'; // Ajuste o caminho conforme necessário
 
 // Verifica se a requisição é do tipo POST para processar o formulário
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {

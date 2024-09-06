@@ -1,5 +1,5 @@
 <?php
-require_once 'C:\xampp\htdocs\sportsDatas\db\config.php'; // Certifique-se de que o caminho está correto
+require_once 'db\config.php'; // Certifique-se de que o caminho está correto
 
 if (isset($_GET['id']) && !empty($_GET['id'])) {
     $id = $_GET['id'];

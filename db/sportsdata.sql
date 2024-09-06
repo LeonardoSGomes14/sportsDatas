@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 06/09/2024 às 12:38
+-- Tempo de geração: 06-Set-2024 às 19:16
 -- Versão do servidor: 10.4.27-MariaDB
--- Versão do PHP: 8.2.0
+-- versão do PHP: 8.2.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `competitors`
+-- Estrutura da tabela `competitors`
 --
 
 CREATE TABLE `competitors` (
@@ -40,7 +40,7 @@ CREATE TABLE `competitors` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Despejando dados para a tabela `competitors`
+-- Extraindo dados da tabela `competitors`
 --
 
 INSERT INTO `competitors` (`id_competitor`, `name`, `age`, `height`, `weight`, `gender`, `cpf`, `rg`, `team`) VALUES
@@ -50,10 +50,10 @@ INSERT INTO `competitors` (`id_competitor`, `name`, `age`, `height`, `weight`, `
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `locale`
+-- Estrutura da tabela `locales`
 --
 
-CREATE TABLE `locale` (
+CREATE TABLE `locales` (
   `id_locale` int(11) NOT NULL,
   `street` varchar(255) NOT NULL,
   `neighborhood` varchar(255) NOT NULL,
@@ -65,40 +65,39 @@ CREATE TABLE `locale` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Despejando dados para a tabela `locale`
+-- Extraindo dados da tabela `locales`
 --
 
-INSERT INTO `locale` (`id_locale`, `street`, `neighborhood`, `number`, `cep`, `city`, `state`, `country`) VALUES
+INSERT INTO `locales` (`id_locale`, `street`, `neighborhood`, `number`, `cep`, `city`, `state`, `country`) VALUES
 (1, 'conceição do monte alegre ', 'villa affini', 520, 19703024, 'paraguacu', 'sao paulo', 'brasil'),
 (2, 'salmen zauy', 'vila nova', 325, 19703025, 'paraguacu paulista', 'sao paulo', 'brasil');
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `sport`
+-- Estrutura da tabela `sports`
 --
 
-CREATE TABLE `sport` (
+CREATE TABLE `sports` (
   `id_sport` int(11) NOT NULL,
   `modality` varchar(255) NOT NULL,
   `olimpic_year` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Despejando dados para a tabela `sport`
+-- Extraindo dados da tabela `sports`
 --
 
-INSERT INTO `sport` (`id_sport`, `modality`, `olimpic_year`) VALUES
-(1, 'natacao', 2024),
-(2, 'volei', 2024);
+INSERT INTO `sports` (`id_sport`, `modality`, `olimpic_year`) VALUES
+(1, 'natacao', 2024);
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `trainer`
+-- Estrutura da tabela `trainers`
 --
 
-CREATE TABLE `trainer` (
+CREATE TABLE `trainers` (
   `id_trainer` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
   `age` int(11) NOT NULL,
@@ -109,10 +108,10 @@ CREATE TABLE `trainer` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Despejando dados para a tabela `trainer`
+-- Extraindo dados da tabela `trainers`
 --
 
-INSERT INTO `trainer` (`id_trainer`, `name`, `age`, `height`, `weight`, `rg`, `cpf`) VALUES
+INSERT INTO `trainers` (`id_trainer`, `name`, `age`, `height`, `weight`, `rg`, `cpf`) VALUES
 (1, 'leonardo', 27, 1.8, 77, 110003214, 1221012332),
 (2, 'lucas', 41, 1.7, 69, 102221013, 1030142111);
 
@@ -121,31 +120,31 @@ INSERT INTO `trainer` (`id_trainer`, `name`, `age`, `height`, `weight`, `rg`, `c
 --
 
 --
--- Índices de tabela `competitors`
+-- Índices para tabela `competitors`
 --
 ALTER TABLE `competitors`
   ADD PRIMARY KEY (`id_competitor`);
 
 --
--- Índices de tabela `locale`
+-- Índices para tabela `locales`
 --
-ALTER TABLE `locale`
+ALTER TABLE `locales`
   ADD PRIMARY KEY (`id_locale`);
 
 --
--- Índices de tabela `sport`
+-- Índices para tabela `sports`
 --
-ALTER TABLE `sport`
+ALTER TABLE `sports`
   ADD PRIMARY KEY (`id_sport`);
 
 --
--- Índices de tabela `trainer`
+-- Índices para tabela `trainers`
 --
-ALTER TABLE `trainer`
+ALTER TABLE `trainers`
   ADD PRIMARY KEY (`id_trainer`);
 
 --
--- AUTO_INCREMENT para tabelas despejadas
+-- AUTO_INCREMENT de tabelas despejadas
 --
 
 --
@@ -155,21 +154,21 @@ ALTER TABLE `competitors`
   MODIFY `id_competitor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT de tabela `locale`
+-- AUTO_INCREMENT de tabela `locales`
 --
-ALTER TABLE `locale`
+ALTER TABLE `locales`
   MODIFY `id_locale` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT de tabela `sport`
+-- AUTO_INCREMENT de tabela `sports`
 --
-ALTER TABLE `sport`
+ALTER TABLE `sports`
   MODIFY `id_sport` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT de tabela `trainer`
+-- AUTO_INCREMENT de tabela `trainers`
 --
-ALTER TABLE `trainer`
+ALTER TABLE `trainers`
   MODIFY `id_trainer` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
