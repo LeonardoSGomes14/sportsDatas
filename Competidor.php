@@ -137,8 +137,8 @@
                     <td>
                         
 
-                        <a href="update_competitor.php?id=<?php echo  htmlspecialchars($competitor['id_competitor']); ?>" class="btn btn-warning btn-sm">Edit</a>
-                        <a href="delete-competidor.php?id=<?php echo   htmlspecialchars($competitor['id_competitor']); ?>" class="btn btn-danger btn-sm" onclick="return confirm('Tem certeza que deseja excluir este esporte?');">Excluir</a>
+                        <a href="update_competitor.php?id=<?php echo  htmlspecialchars($competitor['id_competitor']); ?>" ><img class="btn_action" src = 'img\icons8-editar-24.png'</a>
+                        <a href="delete-competidor.php?id=<?php echo   htmlspecialchars($competitor['id_competitor']); ?>" onclick="return confirm('Tem certeza que deseja excluir este esporte?');"><img class="btn_action" src = 'img\icons8-remover-16.png'</a>
 
 
                     </td>

@@ -1,5 +1,5 @@
 <?php
-require_once 'C:\xampp\htdocs\sportsDatas\MVC\Controller\TrainersController.php';
+require_once 'MVC\Controller\TrainersController.php';
 
 // Configuração do PDO
 $dsn = 'mysql:host=localhost;dbname=sportsdata;charset=utf8';

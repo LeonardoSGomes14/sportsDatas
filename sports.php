@@ -11,7 +11,7 @@ $sports = $controller->listSports();
 <html lang="pt-BR">
 
 <head>
-    <title>Pesquisa da Geração</title>
+    <title>Cadastro de esportes</title>
     
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -127,8 +127,8 @@ $sports = $controller->listSports();
                             <td><?php echo htmlspecialchars($sport['modality']); ?></td>
                             <td><?php echo htmlspecialchars($sport['olimpic_year']); ?></td>
                             <td>
-                                <a href="edit_sport.php?id=<?php echo $sport['id_sport']; ?>" class="btn btn-warning btn-sm">Editar</a>
-                                <a href="delete_sport.php?id=<?php echo $sport['id_sport']; ?>" class="btn btn-danger btn-sm" onclick="return confirm('Tem certeza que deseja excluir este esporte?');">Excluir</a>
+                                <a href="edit_sport.php?id=<?php echo $sport['id_sport']; ?>" ><img class="btn_action" src = 'img\icons8-editar-24.png'</a>
+                                <a href="delete_sport.php?id=<?php echo $sport['id_sport']; ?>" onclick="return confirm('Tem certeza que deseja excluir este esporte?');"><img class="btn_action" src = 'img\icons8-remover-16.png'</a>
                             </td>
                         </tr>
                     <?php endforeach; ?>

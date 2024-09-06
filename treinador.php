@@ -71,7 +71,7 @@
 
 <main>
 <?php
-require_once 'C:\xampp\htdocs\sportsDatas\MVC\Controller\TrainersController.php';
+require_once 'MVC\Controller\TrainersController.php';
 
 // Configuração do PDO
 $dsn = 'mysql:host=localhost;dbname=sportsdata;charset=utf8';
@@ -174,8 +174,8 @@ $trainers = $trainerController->listTrainers();
                     <td><?php echo htmlspecialchars($trainer['rg']); ?></td>
                     <td>
                    
-                    <a href="update_trainer.php?id=<?php echo htmlspecialchars($trainer['id_trainer']); ?>" class="btn btn-warning btn-sm">Editar</a>
-                    <a href="delete_trainer.php?id=<?php echo htmlspecialchars($trainer['id_trainer']); ?>" class="btn btn-danger btn-sm" onclick="return confirm('Tem certeza que deseja excluir este treinador?');">Excluir</a> </button>
+                    <a href="update_trainer.php?id=<?php echo htmlspecialchars($trainer['id_trainer']); ?>" ><img class="btn_action" src = 'img\icons8-editar-24.png'</a>
+                    <a href="delete_trainer.php?id=<?php echo htmlspecialchars($trainer['id_trainer']); ?>"  onclick="return confirm('Tem certeza que deseja excluir este treinador?');"><img class="btn_action" src = 'img\icons8-remover-16.png'</a> </button>
                         </form>
                     </td>
                 </tr>
@@ -222,34 +222,6 @@ $trainers = $trainerController->listTrainers();
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
