@@ -1,3 +1,11 @@
+<?php
+require_once 'C:\xampp\htdocs\sportsDatas\db\config.php';  // Caminho para o config.php
+require_once 'C:\xampp\htdocs\sportsDatas\MVC\Controller\SportsController.php';  // Caminho para o SportsController.php
+
+$controller = new SportsController($pdo);
+$sports = $controller->listSports();  // Obtém a lista de esportes
+?>
+
 <!doctype html>
 <html lang="pt-BR">
 
@@ -84,63 +92,52 @@
     <link rel="stylesheet" href="styles.css"> <!-- Opcional: para adicionar estilos -->
 </head>
 <body>
-    <h1>Esportes</h1>
+   
 
-    <!-- Formulário para adicionar esporte -->
-    <form action="add_sport.php" method="POST">
-        <label for="modality">Modalidade:</label>
-        <input type="text" name="modality" id="modality" required>
-        
-        <label for="olimpic_year">Ano Olímpico:</label>
-        <input type="number" name="olimpic_year" id="olimpic_year" required>
+    <main class="container mt-5 pt-5">
+        <h1>Adicionar Novo Esporte</h1>
+        <form action="add_sport.php" method="POST">
+            <div class="form-group">
+                <label for="modality">Modalidade:</label>
+                <input type="text" name="modality" id="modality" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="olimpic_year">Ano Olímpico:</label>
+                <input type="number" name="olimpic_year" id="olimpic_year" class="form-control" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Adicionar Esporte</button>
+        </form>
 
-        <button type="submit">Adicionar Esporte</button>
-    </form>
-
-    <!-- Lista de esportes -->
-    <h2>Lista de Esportes</h2>
-    <table border="1">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Modalidade</th>
-                <th>Ano Olímpico</th>
-                <th>Ações</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php if (!empty($sports)) : ?>
-                <?php foreach ($sports as $sport) : ?>
-                    <tr>
-                        <td><?php echo $sport['id_sport']; ?></td>
-                        <td><?php echo $sport['modality']; ?></td>
-                        <td><?php echo $sport['olimpic_year']; ?></td>
-                        <td>
-                            <!-- Botão para editar -->
-                            <a href="edit_sport.php?id=<?php echo $sport['id_sport']; ?>">Editar</a> | 
-                            <!-- Botão para deletar -->
-                            <a href="delete_sport.php?id=<?php echo $sport['id_sport']; ?>" onclick="return confirm('Tem certeza que deseja excluir este esporte?');">Excluir</a>
-                        </td>
-                    </tr>
-                <?php endforeach; ?>
-            <?php else : ?>
+        <h2 class="mt-5">Lista de Esportes</h2>
+        <table class="table table-striped">
+            <thead>
                 <tr>
-                    <td colspan="4">Nenhum esporte cadastrado.</td>
+                    <th>ID</th>
+                    <th>Modalidade</th>
+                    <th>Ano Olímpico</th>
+                    <th>Ações</th>
                 </tr>
-            <?php endif; ?>
-        </tbody>
-    </table>
-</body>
-</html>
- 
-
-
-</body>
-</html>
-
-
-
-    
+            </thead>
+            <tbody>
+                <?php if (!empty($sports)) : ?>
+                    <?php foreach ($sports as $sport) : ?>
+                        <tr>
+                            <td><?php echo htmlspecialchars($sport['id_sport']); ?></td>
+                            <td><?php echo htmlspecialchars($sport['modality']); ?></td>
+                            <td><?php echo htmlspecialchars($sport['olimpic_year']); ?></td>
+                            <td>
+                                <a href="edit_sport.php?id=<?php echo $sport['id_sport']; ?>" class="btn btn-warning btn-sm">Editar</a>
+                                <a href="delete_sport.php?id=<?php echo $sport['id_sport']; ?>" class="btn btn-danger btn-sm" onclick="return confirm('Tem certeza que deseja excluir este esporte?');">Excluir</a>
+                            </td>
+                        </tr>
+                    <?php endforeach; ?>
+                <?php else : ?>
+                    <tr>
+                        <td colspan="4">Nenhum esporte cadastrado.</td>
+                    </tr>
+                <?php endif; ?>
+            </tbody>
+        </table>
     </main>
 
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
