@@ -45,7 +45,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   exit(); 
 }
     } else {
-        // Tratar erro: dados incompletos
+       
         echo 'Error: All fields are required.';
     }
 
