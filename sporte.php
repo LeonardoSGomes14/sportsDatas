@@ -75,19 +75,66 @@
     <title>Cadastro de Esportes</title>
 </head>
 <body>
-    <h1>Cadastrar Novo Esporte</h1>
-    <form action="create.php" method="post">
-        <label for="name">Nome do Esporte:</label>
-        <input type="text" id="name" name="name" required>
-        <input type="submit" value="Cadastrar">
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esportes</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Opcional: para adicionar estilos -->
+</head>
+<body>
+    <h1>Esportes</h1>
+
+    <!-- Formulário para adicionar esporte -->
+    <form action="add_sport.php" method="POST">
+        <label for="modality">Modalidade:</label>
+        <input type="text" name="modality" id="modality" required>
+        
+        <label for="olimpic_year">Ano Olímpico:</label>
+        <input type="number" name="olimpic_year" id="olimpic_year" required>
+
+        <button type="submit">Adicionar Esporte</button>
     </form>
 
+    <!-- Lista de esportes -->
     <h2>Lista de Esportes</h2>
-    <ul>
-        <?php foreach ($sports as $sport): ?>
-            <li><?= htmlspecialchars($sport['name']) ?></li>
-        <?php endforeach; ?>
-    </ul>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Modalidade</th>
+                <th>Ano Olímpico</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php if (!empty($sports)) : ?>
+                <?php foreach ($sports as $sport) : ?>
+                    <tr>
+                        <td><?php echo $sport['id_sport']; ?></td>
+                        <td><?php echo $sport['modality']; ?></td>
+                        <td><?php echo $sport['olimpic_year']; ?></td>
+                        <td>
+                            <!-- Botão para editar -->
+                            <a href="edit_sport.php?id=<?php echo $sport['id_sport']; ?>">Editar</a> | 
+                            <!-- Botão para deletar -->
+                            <a href="delete_sport.php?id=<?php echo $sport['id_sport']; ?>" onclick="return confirm('Tem certeza que deseja excluir este esporte?');">Excluir</a>
+                        </td>
+                    </tr>
+                <?php endforeach; ?>
+            <?php else : ?>
+                <tr>
+                    <td colspan="4">Nenhum esporte cadastrado.</td>
+                </tr>
+            <?php endif; ?>
+        </tbody>
+    </table>
+</body>
+</html>
+ 
+
+
 </body>
 </html>
 
