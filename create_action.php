@@ -1,10 +1,9 @@
 <?php
-// C:\xampp\htdocs\SportData\sportsDatas\MVC\View\Competitors\create_action.php
 
 // Incluir o arquivo de configuração e o autoload (ajuste conforme necessário)
-require_once 'C:\xampp\htdocs\sportsDatas\db\config.php';
-require_once 'C:\xampp\htdocs\sportsDatas\MVC\Controller\CompetitorsController.php';
-require_once 'C:\xampp\htdocs\sportsDatas\db\config.php';
+require_once 'db\config.php';
+require_once 'MVC\Controller\CompetitorsController.php';
+require_once 'db\config.php';
 
 
 // Criar uma instância do controlador

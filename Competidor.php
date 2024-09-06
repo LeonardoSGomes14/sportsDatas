@@ -1,12 +1,3 @@
-<?php
-require_once 'C:\xampp\htdocs\sportsDatas\db\config.php';
-require_once 'C:\xampp\htdocs\sportsDatas\MVC\Controller\CompetitorsController.php';
-
-// Inicializa o controlador e obtém a lista de competidores
-$controller = new CompetitorController($pdo);
-$competitors = $controller->listCompetitors();
-?>
-
 <!doctype html>
 <html lang="pt-BR">
 
@@ -48,8 +39,8 @@ $competitors = $controller->listCompetitors();
         <div class="offcanvas-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <span class="nav-icon"><img src="./img/icons/journal-text.svg" alt="Cadastrar Esportes"></span>
-                    <a class="nav-link" href="./sporte.php">Cadastrar Esportes</a>
+                    <span class="nav-icon"><img src="./img/icons/journal-text.svg" alt=""></span>
+                    <a class="nav-link" href="./sports.php">Cadastrar Esportes</a>
                 </li>
                 <li class="nav-item">
                     <span class="nav-icon"><img src="./img/icons/exclamation-triangle.svg" alt="Cadastrar Competidor"></span>
@@ -68,8 +59,8 @@ $competitors = $controller->listCompetitors();
             <div class="offcanvas-footer">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <span class="nav-icon"><img src="./img/icons/info-circle.svg" alt="Sobre nós"></span>
-                        <a class="nav-link" href="./sobrenos.html">Sobre nós</a>
+                        <span class="nav-icon"><img src="./img/icons/info-circle.svg" alt=""></span>
+                        <a class="nav-link" href="./sobrenos.php">Sobre nós</a>
                     </li>
                 </ul>
             </div>

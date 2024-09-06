@@ -55,7 +55,7 @@
                             d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5" />
                     </svg></span>
             </button>
-            <a class="navbar-brand" href="#" style="font-weight: bold;">  Sports Data   </a>
+            <a class="navbar-brand" href="#" style="font-weight: bold;">  SportsData  </a>
             <img class="log" src="img/usuarios-logo.png">
         </nav>
     
@@ -64,7 +64,7 @@
             <ul class="navbar-nav">
                 <li class="nav-item">
                     <span class="nav-icon"><img src="./img/icons/journal-text.svg" alt=""></span>
-                    <a class="nav-link" href="./sporte.php">Cadastrar Esportes</a>
+                    <a class="nav-link" href="./sports.php">Cadastrar Esportes</a>
                 </li>
                 <li class="nav-item">
                     <span class="nav-icon"><img src="./img/icons/exclamation-triangle.svg" alt=""></span>
@@ -84,7 +84,7 @@
                 <ul class="navbar-nav">
                     <li class="nav-item">
                         <span class="nav-icon"><img src="./img/icons/info-circle.svg" alt=""></span>
-                        <a class="nav-link" href="./sobrenos.html">Sobre nós</a>
+                        <a class="nav-link" href="./sobrenos.php">Sobre nós</a>
                     </li>
                 </ul>
             </div>
