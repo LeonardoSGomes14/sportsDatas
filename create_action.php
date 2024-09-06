@@ -1,17 +1,17 @@
 <?php
 
-// Incluir o arquivo de configuração e o autoload (ajuste conforme necessário)
+
 require_once 'db\config.php';
 require_once 'MVC\Controller\CompetitorsController.php';
 require_once 'db\config.php';
 
 
-// Criar uma instância do controlador
+
 $competitorController = new CompetitorController($pdo);
 
-// Verificar se o formulário foi enviado
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Sanitizar e validar os dados do formulário
+   
     $name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING);
     $age = filter_input(INPUT_POST, 'age', FILTER_SANITIZE_NUMBER_INT);
     $height = filter_input(INPUT_POST, 'height', FILTER_SANITIZE_STRING);
@@ -21,9 +21,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $rg = filter_input(INPUT_POST, 'rg', FILTER_SANITIZE_STRING);
     $team = filter_input(INPUT_POST, 'team', FILTER_SANITIZE_STRING);
 
-    // Verificar se todos os dados estão presentes
+    
     if ($name && $age && $height && $weight && $gender && $cpf && $rg && $team) {
-        // Chamar o método do controlador para criar um novo competidor
+       
         $competitorController->createCompetitor($name, $age, $height, $weight, $gender, $cpf, $rg, $team);
 
         echo '<!DOCTYPE html>
@@ -42,7 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </script>
         </body>
         </html>';
-  exit(); // Certifica-se de que o PHP não continua executando após o JavaScript
+  exit(); 
 }
     } else {
         // Tratar erro: dados incompletos
