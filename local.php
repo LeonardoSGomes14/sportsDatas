@@ -1,3 +1,26 @@
+<?php
+require_once 'db\config.php';
+require_once 'MVC\Controller\LocalesController.php';  
+require_once 'MVC\Model\localeModel.php';  
+
+$controller = new LocaleController($pdo);
+$locales = $controller->listlocales();  
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $street = $_POST['street'];
+    $neighborhood = $_POST['neighborhood'];
+    $number = $_POST['number'];
+    $cep = $_POST['cep'];
+    $city = $_POST['city'];
+    $state = $_POST['state'];
+    $country = $_POST['country'];
+
+    $controller-> createLocale($street, $neighborhood, $number, $cep, $city, $state, $country);
+}
+
+?>
+
+
 <!doctype html>
 <html lang="pt-BR">
 
@@ -94,7 +117,7 @@
 
     <main class="container mt-5 pt-5">
         <h1>Adicionar Novo Local</h1>
-        <form action="local.php" method="post">
+        <form method="post">
             <div class="form-group">
                 <label for="street">Rua:</label>
                 <input type="text" class="form-control" id="street" name="street" required>
@@ -142,7 +165,7 @@
                 </tr>
             </thead>
             <tbody>
-                <?php foreach ($locales as $locale) : ?>
+                <?php foreach  ($locales as $locale) : ?>
                 <tr>
                     <td><?php echo htmlspecialchars($locale['street']); ?></td>
                     <td><?php echo htmlspecialchars($locale['neighborhood']); ?></td>

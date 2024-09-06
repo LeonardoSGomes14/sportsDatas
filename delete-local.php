@@ -1,6 +1,6 @@
 <?php
 require_once 'db\config.php';
-require_once 'MVC\Controller\SportsController.php';
+require_once 'MVC\Controller\localesController.php';
 
 $controller = new LocaleController($pdo);
 
