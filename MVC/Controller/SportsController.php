@@ -1,40 +1,38 @@
 <?php
-require_once 'C:\xampp\htdocs\SportData\sportsDatas\MVC\Model\SportsModel.php';
+require_once 'C:\xampp\htdocs\sportsDatas\MVC\Model\SportModel.php';
 
 class SportsController
 {
-    private $sportmodel;
+    private $sportModel;
 
     public function __construct($pdo)
     {
-        $this->sportmodel = new sportModel($pdo);
+        $this->sportModel = new sportModel($pdo);
     }
 
-    public function createSport($name)
+    public function createSport($modality, $olimpic_year)
     {
-        $this->sportmodel->createSport($name);
+        return $this->sportModel->createSport($modality, $olimpic_year);
     }
 
     public function listSports()
     {
-        return $this->sportmodel->listSports();
+        return $this->sportModel->listSports();
     }
 
     public function showSportsList()
     {
-        $sports = $this->sportmodel->listSports();
-        include 'C:\xampp\htdocs\SportData\sportsDatas\MVC\View\Sport\view.php';
+        $sports = $this->listSports();  // Obtém a lista de esportes
+        include 'C:\xampp\htdocs\sportsDatas\MVC\View\Sport\view.php';  // Inclui a view, passando os esportes
     }
 
-    public function updateSport($id_sport, $name)
+    public function updateSport($id_sport, $modality, $olimpic_year)
     {
-        $this->sportmodel->updateSport($id_sport, $name);
+        return $this->sportModel->updateSport($id_sport, $modality, $olimpic_year);
     }
 
-    
     public function deleteSport($id_sport)
     {
-        $this->sportmodel->deleteSport($id_sport);
+        return $this->sportModel->deleteSport($id_sport);
     }
-
 }
