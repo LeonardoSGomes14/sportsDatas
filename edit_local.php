@@ -3,7 +3,7 @@ require_once 'db\config.php';
 require_once 'MVC\Controller\localesController.php';
 
 $controller = new LocaleController($pdo);
-
+$locale = $controller->listLocales();
 if (isset($_GET['id'])) {
     $localesId = $_GET['id'];
     $locale = $controller->listLocales();
