@@ -25,7 +25,7 @@ class CompetitorModel
 
     public function updateCompetitor($id_competitor, $name, $age, $height, $weight, $gender, $cpf, $rg, $team)
     {
-        $sql = "UPDATE competitors SET name = ?, age = ?, height = ?, weight = ?, gender = ?, cpf = ?, rg = ?, team = ? WHERE id_competitor = ?";
+        $sql = "UPDATE competitors SET name = ?, age = ?, height = ?, weight = ?, gender = ?, cpf = ?, rg = ?, team = ? WHERE id_competitor  ?";
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute([$name, $age, $height, $weight, $gender, $cpf, $rg, $team, $id_competitor]);
     }
