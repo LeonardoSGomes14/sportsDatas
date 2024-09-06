@@ -11,20 +11,16 @@ require_once 'C:\xampp\htdocs\sportsDatas\MVC\Controller\CompetitorsController.p
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     
     <link rel="stylesheet" href="./css/styles.css">
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
-
     
 </head>
-
 <body>
     <header>
         <!-- Navbar -->
@@ -71,7 +67,6 @@ require_once 'C:\xampp\htdocs\sportsDatas\MVC\Controller\CompetitorsController.p
             </div>
         </div>
     </header>
-
     <main class="container mt-5 pt-5">
         <h1>Create Competitor</h1>
         <form action="create_action.php" method="post">
@@ -109,7 +104,6 @@ require_once 'C:\xampp\htdocs\sportsDatas\MVC\Controller\CompetitorsController.p
             </div>
             <button type="submit" class="btn btn-primary">Create Competitor</button>
         </form>
-
         <h2 class="mt-5">Competitors List</h2>
         <?php if (isset($competitors) && is_array($competitors)) : ?>
         <table class="table table-striped">
@@ -141,11 +135,8 @@ require_once 'C:\xampp\htdocs\sportsDatas\MVC\Controller\CompetitorsController.p
                     <td><?php echo htmlspecialchars($competitor['team']); ?></td>
                     <td>
                         
-
                         <a href="update_competitor.php?id=<?php echo  htmlspecialchars($competitor['id_competitor']); ?>" class="btn btn-warning btn-sm">Edit</a>
                         <a href="delete-competidor.php?id=<?php echo   htmlspecialchars($competitor['id_competitor']); ?>" class="btn btn-danger btn-sm" onclick="return confirm('Tem certeza que deseja excluir este esporte?');">Excluir</a>
-
-
                     </td>
                 </tr>
                 <?php endforeach; ?>
@@ -155,9 +146,7 @@ require_once 'C:\xampp\htdocs\sportsDatas\MVC\Controller\CompetitorsController.p
         <p>No competitors found.</p>
         <?php endif; ?>
     </main>
-
     <button id="backToTopBtn" title="Voltar ao Topo">↑</button>
-
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -171,15 +160,11 @@ require_once 'C:\xampp\htdocs\sportsDatas\MVC\Controller\CompetitorsController.p
         crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="./js/app.js"></script>
-
     <script>
         const listItems = document.querySelectorAll('#bordoesList li');
-
         listItems.forEach(item => {
             const audio = item.querySelector('audio');
-
             item.addEventListener('click', () => {
-
                 listItems.forEach(otherItem => {
                     if (otherItem !== item) {
                         otherItem.classList.remove('expanded');
@@ -187,9 +172,7 @@ require_once 'C:\xampp\htdocs\sportsDatas\MVC\Controller\CompetitorsController.p
                         otherItem.querySelector('audio').currentTime = 0;
                     }
                 });
-
                 item.classList.toggle('expanded');
-
                 if (audio.paused && item.classList.contains('expanded')) {
                     audio.play();
                 } else {
@@ -197,7 +180,6 @@ require_once 'C:\xampp\htdocs\sportsDatas\MVC\Controller\CompetitorsController.p
                     audio.currentTime = 0;
                     item.classList.remove('expanded');
                 }
-
                 // Quando o áudio termina, volta ao estado original
                 audio.addEventListener('ended', () => {
                     item.classList.remove('expanded');
@@ -206,5 +188,4 @@ require_once 'C:\xampp\htdocs\sportsDatas\MVC\Controller\CompetitorsController.p
         });
     </script>
 </body>
-
 </html>

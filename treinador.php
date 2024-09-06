@@ -13,11 +13,7 @@
 
     <link rel="stylesheet" href="./css/styles.css">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
-        rel="stylesheet">
+   
 </head>
 
 
@@ -25,6 +21,7 @@
 <body>
     <header>
         <!-- Navbar -->
+        <table class="table table-striped">
         <nav class="navbar navbar-light bg-light fixed-top">
             <button class="navbar-toggler" type="button" id="navToggle">
                 <span class="navbar-icon"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#f1f1f1"
@@ -70,6 +67,7 @@
     </header>
 
 <main>
+    
 <?php
 require_once 'C:\xampp\htdocs\sportsDatas\MVC\Controller\TrainersController.php';
 
@@ -121,6 +119,7 @@ $trainers = $trainerController->listTrainers();
     <title>Gerenciar Treinadores</title>
 </head>
 <body>
+    
 <table class="table table-striped">
     <h1>Cadastro de Treinadores</h1>
     <form method="POST">
@@ -145,12 +144,15 @@ $trainers = $trainerController->listTrainers();
         <input type="submit" name="create" value="Cadastrar">
     </form>
 
+
+    <table class="table table-striped">
     <h2>Lista de Treinadores</h2>
     
     <table border="1">
         <thead>
+        <table class="table table-striped">
             <tr>
-            <table class="table table-striped">
+         
                 <th>ID</th>
                 <th>Nome</th>
                 <th>Idade</th>
