@@ -6,6 +6,11 @@
     font-family: "Inter", sans-serif;
 }
 
+.btn_action {
+    width: 25px;
+    height: 25px;
+}
+
 button:focus,
 a:focus,
 input:focus,
@@ -238,20 +243,21 @@ button:hover {
 }
 
 .table .btn-warning {
-    background-color: #ffc107;
-    color: #333;
+    width: 25px;
+    height: 25px;
 }
 
 .table .btn-warning:hover {
-    background-color: #e0a800;
+    background-color: #ede6f8;
 }
 
 .table .btn-danger {
-    background-color: #dc3545;
+    width: 25px;
+    height: 25px;
 }
 
 .table .btn-danger:hover {
-    background-color: #c82333;
+    background-color: #ffd3d3;
 }
 
 /* Rodapé */

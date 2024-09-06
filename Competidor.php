@@ -1,6 +1,6 @@
 <?php
 require_once 'db\config.php';
-require_once 'C:\xampp\htdocs\sportsDatas\MVC\Controller\CompetitorsController.php';  // Caminho para o SportsController.php
+require_once 'MVC\Controller\CompetitorsController.php';  // Caminho para o SportsController.php
  // Caminho para o SportsController.php
 ?>
 <!doctype html>
@@ -135,8 +135,11 @@ require_once 'C:\xampp\htdocs\sportsDatas\MVC\Controller\CompetitorsController.p
                     <td><?php echo htmlspecialchars($competitor['team']); ?></td>
                     <td>
                         
+
                         <a href="update_competitor.php?id=<?php echo  htmlspecialchars($competitor['id_competitor']); ?>" class="btn btn-warning btn-sm">Edit</a>
                         <a href="delete-competidor.php?id=<?php echo   htmlspecialchars($competitor['id_competitor']); ?>" class="btn btn-danger btn-sm" onclick="return confirm('Tem certeza que deseja excluir este esporte?');">Excluir</a>
+
+
                     </td>
                 </tr>
                 <?php endforeach; ?>

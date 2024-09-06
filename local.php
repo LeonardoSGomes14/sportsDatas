@@ -92,15 +92,15 @@
     </header>
 
 
-<main class="container mt-5 pt-5">
+    <main class="container mt-5 pt-5">
         <h1>Adicionar Novo Local</h1>
-        <form action="create_actionlocal.php" method="post">
+        <form action="local.php" method="post">
             <div class="form-group">
                 <label for="street">Rua:</label>
                 <input type="text" class="form-control" id="street" name="street" required>
             </div>
             <div class="form-group">
-                <label for="neighborhhod">Bairro:</label>
+                <label for="neighborhood">Bairro:</label>
                 <input type="text" class="form-control" id="neighborhood" name="neighborhood" required>
             </div>
             <div class="form-group">
@@ -126,8 +126,8 @@
             <button type="submit" class="btn btn-primary">Adicionar Local</button>
         </form>
 
-        <h2 class="mt-5">Lista Local</h2>
-        <?php if (isset($locales) && is_array($locale)) : ?>
+        <h2 class="mt-5">Lista de Locais</h2>
+        <?php if (!empty($locales)) : ?>
         <table class="table table-striped">
             <thead>
                 <tr>
@@ -138,12 +138,12 @@
                     <th>Cidade</th>
                     <th>Estado</th>
                     <th>País</th>
+                    <th>Ações</th>
                 </tr>
             </thead>
             <tbody>
                 <?php foreach ($locales as $locale) : ?>
                 <tr>
-                    <td><?php echo htmlspecialchars($locale['id_locale']); ?></td>
                     <td><?php echo htmlspecialchars($locale['street']); ?></td>
                     <td><?php echo htmlspecialchars($locale['neighborhood']); ?></td>
                     <td><?php echo htmlspecialchars($locale['number']); ?></td>
@@ -152,22 +152,17 @@
                     <td><?php echo htmlspecialchars($locale['state']); ?></td>
                     <td><?php echo htmlspecialchars($locale['country']); ?></td>
                     <td>
-                        
-
-                        <a href="update.php?id==<?php echo  htmlspecialchars($locale['id_locale']); ?>" class="btn btn-warning btn-sm">Edit</a>
-                        <a href="delete-local.php?id=<?php echo   htmlspecialchars($locale['id_locale']); ?>" class="btn btn-danger btn-sm" onclick="return confirm('Tem certeza que deseja excluir este local?');">Excluir</a>
-
-
+                        <a href="update.php?id=<?php echo htmlspecialchars($locale['id_locale']); ?>" class="btn btn-warning btn-sm">Editar</a>
+                        <a href="delete-local.php?id=<?php echo htmlspecialchars($locale['id_locale']); ?>" class="btn btn-danger btn-sm" onclick="return confirm('Tem certeza que deseja excluir este local?');">Excluir</a>
                     </td>
                 </tr>
                 <?php endforeach; ?>
             </tbody>
         </table>
         <?php else : ?>
-        <p>Local Não Encontrado!</p>
+        <p>Nenhum local cadastrado!</p>
         <?php endif; ?>
     </main>
-
 
 
 

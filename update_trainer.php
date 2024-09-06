@@ -1,5 +1,5 @@
 <?php
-require_once 'C:\xampp\htdocs\sportsDatas\MVC\Controller\TrainersController.php';
+require_once 'MVC\Controller\TrainersController.php';
 
 // Configuração do PDO
 $dsn = 'mysql:host=localhost;dbname=sportsdata;charset=utf8';
@@ -58,6 +58,7 @@ if (isset($_GET['id'])) {
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
+
     <div class="container mt-5">
         <h1>Editar Treinador</h1>
         <form method="POST">
