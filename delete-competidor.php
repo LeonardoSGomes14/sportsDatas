@@ -5,17 +5,17 @@ if (isset($_GET['id']) && !empty($_GET['id'])) {
     $id = $_GET['id'];
 
     try {
-        // Prepara a consulta SQL para excluir o competidor
+        
         $sql = "DELETE FROM competitors WHERE id_competitor = :id";
         $stmt = $pdo->prepare($sql);
         $stmt->bindParam(':id', $id, PDO::PARAM_INT);
 
-        // Executa a consulta
+      
         $stmt->execute();
 
-        // Verifica se a exclusão foi bem-sucedida
+        
         if ($stmt->rowCount() > 0) {
-            header('Location: competidor.php'); // Redireciona após a exclusão
+            header('Location: competidor.php'); 
             exit();
         } else {
             echo "Competitor not found.";
