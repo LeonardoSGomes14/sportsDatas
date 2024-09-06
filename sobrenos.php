@@ -173,18 +173,21 @@
             <img src="./img/alunos/evellin.png" class="card-img-top" alt="xx">
             <div class="card-body">
                 <p class="card-text">Evellin Correia</p>
+                <p class="card-text">Design de Imagens</p>
             </div>
         </div>
         <div class="card" style="width: 47%; border-radius: 10px;">
             <img src="./img/alunos/camilly.jfif" class="card-img-top" alt="xx">
             <div class="card-body">
                 <p class="card-text">Camilly Ribeiro</p>
+                <p class="card-text">Design de Imagens</p>
             </div>
         </div>
         <div class="card" style="width: 47%; border-radius: 10px;">
             <img src="./img/alunos/silvao.png" class="card-img-top" alt="xx">
             <div class="card-body">
                 <p class="card-text">Livia Botelho</p>
+                <p class="card-text">Design de Imagens</p>
             </div>
     </section>
 

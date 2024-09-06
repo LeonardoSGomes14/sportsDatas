@@ -91,40 +91,78 @@
         </div>
     </header>
 
-<main>
-    
-</main>
 
+    <main class="container mt-5 pt-5">
+        <h1>Adicionar Novo Local</h1>
+        <form action="local.php" method="post">
+            <div class="form-group">
+                <label for="street">Rua:</label>
+                <input type="text" class="form-control" id="street" name="street" required>
+            </div>
+            <div class="form-group">
+                <label for="neighborhood">Bairro:</label>
+                <input type="text" class="form-control" id="neighborhood" name="neighborhood" required>
+            </div>
+            <div class="form-group">
+                <label for="number">Número:</label>
+                <input type="number" class="form-control" id="number" name="number" required>
+            </div>
+            <div class="form-group">
+                <label for="cep">Cep:</label>
+                <input type="text" class="form-control" id="cep" name="cep" required>
+            </div>
+            <div class="form-group">
+                <label for="city">Cidade:</label>
+                <input type="text" class="form-control" id="city" name="city" required>
+            </div>
+            <div class="form-group">
+                <label for="state">Estado:</label>
+                <input type="text" class="form-control" id="state" name="state" required>
+            </div>
+            <div class="form-group">
+                <label for="country">País:</label>
+                <input type="text" class="form-control" id="country" name="country" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Adicionar Local</button>
+        </form>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        <h2 class="mt-5">Lista de Locais</h2>
+        <?php if (!empty($locales)) : ?>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Rua</th>
+                    <th>Bairro</th>
+                    <th>Número</th>
+                    <th>Cep</th>
+                    <th>Cidade</th>
+                    <th>Estado</th>
+                    <th>País</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($locales as $locale) : ?>
+                <tr>
+                    <td><?php echo htmlspecialchars($locale['street']); ?></td>
+                    <td><?php echo htmlspecialchars($locale['neighborhood']); ?></td>
+                    <td><?php echo htmlspecialchars($locale['number']); ?></td>
+                    <td><?php echo htmlspecialchars($locale['cep']); ?></td>
+                    <td><?php echo htmlspecialchars($locale['city']); ?></td>
+                    <td><?php echo htmlspecialchars($locale['state']); ?></td>
+                    <td><?php echo htmlspecialchars($locale['country']); ?></td>
+                    <td>
+                        <a href="update.php?id=<?php echo htmlspecialchars($locale['id_locale']); ?>" class="btn btn-warning btn-sm">Editar</a>
+                        <a href="delete-local.php?id=<?php echo htmlspecialchars($locale['id_locale']); ?>" class="btn btn-danger btn-sm" onclick="return confirm('Tem certeza que deseja excluir este local?');">Excluir</a>
+                    </td>
+                </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+        <?php else : ?>
+        <p>Nenhum local cadastrado!</p>
+        <?php endif; ?>
+    </main>
 
 
 

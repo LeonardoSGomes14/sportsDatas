@@ -1,5 +1,5 @@
 <?php
-require_once 'C:\xampp\htdocs\SportData\sportsDatas\MVC\Model\LocaleModel.php';
+require_once 'MVC\Model\LocaleModel.php';
 
 class localeController
 {
@@ -10,9 +10,9 @@ class localeController
         $this->localemodel = new localeModel($pdo);
     }
 
-    public function createLocale($name)
+    public function createLocale($rua, $bairro, $numero, $cep, $cidade, $estado, $pais)
     {
-        $this->localemodel->createLocale($name);
+        $this->localemodel->createLocale($rua, $bairro, $numero, $cep, $cidade, $estado, $pais);
     }
 
     public function listLocales()
@@ -26,9 +26,9 @@ class localeController
         include 'C:\xampp\htdocs\SportData\sportsDatas\MVC\View\Local\view.php';
     }
 
-    public function updateLocale($id_locale, $name)
+    public function updateLocale($id_locale, $rua, $bairro, $numero, $cep, $cidade, $estado, $pais)
     {
-        $this->localemodel->updateLocale($id_locale, $name);
+        $this->localemodel->updateLocale($id_locale, $rua, $bairro, $numero, $cep, $cidade, $estado, $pais);
     }
 
     
