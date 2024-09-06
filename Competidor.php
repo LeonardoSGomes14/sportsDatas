@@ -1,8 +1,17 @@
+<?php
+require_once 'C:\xampp\htdocs\sportsDatas\db\config.php';
+require_once 'C:\xampp\htdocs\sportsDatas\MVC\Controller\CompetitorsController.php';
+
+// Inicializa o controlador e obtém a lista de competidores
+$controller = new CompetitorController($pdo);
+$competitors = $controller->listCompetitors();
+?>
+
 <!doctype html>
 <html lang="pt-BR">
 
 <head>
-    <title>Pesquisa da Geração</title>
+    <title>Sports Data</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -10,101 +19,48 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
+    
     <link rel="stylesheet" href="./css/styles.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+
+    
 </head>
 
-<style>
-    .navegation {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .audios {
-        display: flex;
-    }
-
-    #bordoesList {
-        margin: 0;
-    }
-
-    #bordoesList li {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        position: relative;
-        font-size: 18px;
-        margin-bottom: 15px;
-    }
-
-    li.expanded {
-        padding-bottom: 60px;
-        color: cornflowerblue;
-    }
-
-    audio {
-        display: none;
-        position: absolute;
-        bottom: 0;
-        left: 0;
-    }
-
-    li.expanded audio {
-        display: block;
-
-    }
-
-    .carousel-item img {
-        width: 100%;
-        height: 220px;
-    }
-
-    section {
-        padding-top: 70px;
-    }
-</style>
-
 <body>
-
     <header>
         <!-- Navbar -->
         <nav class="navbar navbar-light bg-light fixed-top">
             <button class="navbar-toggler" type="button" id="navToggle">
-                <span class="navbar-icon"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#f1f1f1"
-                        class="bi bi-list" viewBox="0 0 16 16">
-                        <path fill-rule="evenodd"
-                            d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5" />
-                    </svg></span>
+                <span class="navbar-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#f1f1f1" class="bi bi-list" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5" />
+                    </svg>
+                </span>
             </button>
-            <a class="navbar-brand" href="#" style="font-weight: bold;">  Sports Data   </a>
-            <img class="log" src="img/usuarios-logo.png">
+            <a class="navbar-brand" href="#" style="font-weight: bold;">Sports Data</a>
+            <img class="log" src="img/usuarios-logo.png" alt="Logo">
         </nav>
     
         <!-- Offcanvas -->
         <div class="offcanvas-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <span class="nav-icon"><img src="./img/icons/journal-text.svg" alt=""></span>
+                    <span class="nav-icon"><img src="./img/icons/journal-text.svg" alt="Cadastrar Esportes"></span>
                     <a class="nav-link" href="./sporte.php">Cadastrar Esportes</a>
                 </li>
                 <li class="nav-item">
-                    <span class="nav-icon"><img src="./img/icons/exclamation-triangle.svg" alt=""></span>
-                    <a class="nav-link" href="./competidor.php">Cadastrar Competidor </a>
+                    <span class="nav-icon"><img src="./img/icons/exclamation-triangle.svg" alt="Cadastrar Competidor"></span>
+                    <a class="nav-link" href="./competidor.php">Cadastrar Competidor</a>
                 </li>
                 <li class="nav-item">
-                    <span class="nav-icon"><img src="./img/icons/motherboard.svg" alt=""></span>
+                    <span class="nav-icon"><img src="./img/icons/motherboard.svg" alt="Cadastrar Treinador"></span>
                     <a class="nav-link" href="./treinador.php">Cadastrar Treinador</a>
                 </li>
                 <li class="nav-item">
-                    <span class="nav-icon"><img src="./img/icons/hypnotize.svg" alt=""></span>
+                    <span class="nav-icon"><img src="./img/icons/hypnotize.svg" alt="Cadastrar Local"></span>
                     <a class="nav-link" href="./local.php">Cadastrar Local</a>
                 </li>
             </ul>
@@ -112,7 +68,7 @@
             <div class="offcanvas-footer">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <span class="nav-icon"><img src="./img/icons/info-circle.svg" alt=""></span>
+                        <span class="nav-icon"><img src="./img/icons/info-circle.svg" alt="Sobre nós"></span>
                         <a class="nav-link" href="./sobrenos.html">Sobre nós</a>
                     </li>
                 </ul>
@@ -120,6 +76,89 @@
         </div>
     </header>
 
+    <main class="container mt-5 pt-5">
+        <h1>Create Competitor</h1>
+        <form action="create_action.php" method="post">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" class="form-control" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="age">Age:</label>
+                <input type="number" class="form-control" id="age" name="age" required>
+            </div>
+            <div class="form-group">
+                <label for="height">Height:</label>
+                <input type="text" class="form-control" id="height" name="height" required>
+            </div>
+            <div class="form-group">
+                <label for="weight">Weight:</label>
+                <input type="text" class="form-control" id="weight" name="weight" required>
+            </div>
+            <div class="form-group">
+                <label for="gender">Gender:</label>
+                <input type="text" class="form-control" id="gender" name="gender" required>
+            </div>
+            <div class="form-group">
+                <label for="cpf">CPF:</label>
+                <input type="text" class="form-control" id="cpf" name="cpf" required>
+            </div>
+            <div class="form-group">
+                <label for="rg">RG:</label>
+                <input type="text" class="form-control" id="rg" name="rg" required>
+            </div>
+            <div class="form-group">
+                <label for="team">Team:</label>
+                <input type="text" class="form-control" id="team" name="team" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Create Competitor</button>
+        </form>
+
+        <h2 class="mt-5">Competitors List</h2>
+        <?php if (isset($competitors) && is_array($competitors)) : ?>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Height</th>
+                    <th>Weight</th>
+                    <th>Gender</th>
+                    <th>CPF</th>
+                    <th>RG</th>
+                    <th>Team</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($competitors as $competitor) : ?>
+                <tr>
+                    <td><?php echo htmlspecialchars($competitor['id_competitor']); ?></td>
+                    <td><?php echo htmlspecialchars($competitor['name']); ?></td>
+                    <td><?php echo htmlspecialchars($competitor['age']); ?></td>
+                    <td><?php echo htmlspecialchars($competitor['height']); ?></td>
+                    <td><?php echo htmlspecialchars($competitor['weight']); ?></td>
+                    <td><?php echo htmlspecialchars($competitor['gender']); ?></td>
+                    <td><?php echo htmlspecialchars($competitor['cpf']); ?></td>
+                    <td><?php echo htmlspecialchars($competitor['rg']); ?></td>
+                    <td><?php echo htmlspecialchars($competitor['team']); ?></td>
+                    <td>
+                        
+
+                        <a href="update.php?id==<?php echo  htmlspecialchars($competitor['id_competitor']); ?>" class="btn btn-warning btn-sm">Edit</a>
+                        <a href="delete-competidor.php?id=<?php echo   htmlspecialchars($competitor['id_competitor']); ?>" class="btn btn-danger btn-sm" onclick="return confirm('Tem certeza que deseja excluir este esporte?');">Excluir</a>
+
+
+                    </td>
+                </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+        <?php else : ?>
+        <p>No competitors found.</p>
+        <?php endif; ?>
+    </main>
 
     <button id="backToTopBtn" title="Voltar ao Topo">↑</button>
 
