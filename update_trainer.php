@@ -58,6 +58,7 @@ if (isset($_GET['id'])) {
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
+
     <div class="container mt-5">
         <h1>Editar Treinador</h1>
         <form method="POST">

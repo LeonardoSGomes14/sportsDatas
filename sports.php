@@ -78,23 +78,9 @@ $sports = $controller->listSports();
     <main>
     <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro de Esportes</title>
-</head>
-<body>
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Esportes</title>
-    <link rel="stylesheet" href="styles.css"> 
-</head>
+
 <body>
    
-
     <main class="container mt-5 pt-5">
         <h1>Adicionar Novo Esporte</h1>
         <form action="add_sport.php" method="POST">
