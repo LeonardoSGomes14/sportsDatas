@@ -18,7 +18,7 @@ if (isset($_GET['id'])) {
         <script type="text/javascript">
             window.onload = function() {
                 // Redireciona para a página principal
-                window.location.href = "sporte.php";
+                window.location.href = "sports.php";
             }
         </script>
     </body>
