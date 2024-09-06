@@ -137,7 +137,7 @@
                     <td>
                         
 
-                        <a href="update.php?id==<?php echo  htmlspecialchars($competitor['id_competitor']); ?>" class="btn btn-warning btn-sm">Edit</a>
+                        <a href="update_competitor.php?id=<?php echo  htmlspecialchars($competitor['id_competitor']); ?>" class="btn btn-warning btn-sm">Edit</a>
                         <a href="delete-competidor.php?id=<?php echo   htmlspecialchars($competitor['id_competitor']); ?>" class="btn btn-danger btn-sm" onclick="return confirm('Tem certeza que deseja excluir este esporte?');">Excluir</a>
 
 

@@ -20,29 +20,7 @@
         rel="stylesheet">
 </head>
 
-<style>
-    .accordion-button {
-        width: 100%;
-        transition: 0.3s;
-        display: flex;
-        justify-content: space-between;
-        padding: 5px 10px;
-        border-radius: 5px;
-    }
 
-    #ulDesafios li {
-        margin-bottom: 10px;
-    }
-
-    .accordion-button.collapsed .icon {
-        transform: rotate(-180deg);
-        transition: 0.3s ease-in;
-    }
-
-    .accordion-button .icon {
-        transition: 0.3s ease-in;
-    }
-</style>
 
 <body>
     <header>
@@ -92,10 +70,158 @@
     </header>
 
 <main>
+<?php
+require_once 'C:\xampp\htdocs\sportsDatas\MVC\Controller\TrainersController.php';
+
+// Configuração do PDO
+$dsn = 'mysql:host=localhost;dbname=sportsdata;charset=utf8';
+$username = 'root';
+$password = '';
+$options = [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION];
+$pdo = new PDO($dsn, $username, $password, $options);
+
+$trainerController = new trainerController($pdo);
+
+// Processar o formulário de cadastro
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    if (isset($_POST['create'])) {
+        $name = $_POST['name'];
+        $age = $_POST['age'];
+        $height = $_POST['height'];
+        $weight = $_POST['weight'];
+        $cpf = $_POST['cpf'];
+        $rg = $_POST['rg'];
+        
+        $trainerController->createTrainer($name, $age, $height, $weight, $cpf, $rg);
+    } elseif (isset($_POST['update'])) {
+        $id_trainer = $_POST['id_trainer'];
+        $name = $_POST['name'];
+        $age = $_POST['age'];
+        $height = $_POST['height'];
+        $weight = $_POST['weight'];
+        $cpf = $_POST['cpf'];
+        $rg = $_POST['rg'];
+        
+        $trainerController->updateTrainer($id_trainer, $name, $age, $height, $weight, $cpf, $rg);
+    } elseif (isset($_POST['delete'])) {
+        $id_trainer = $_POST['id_trainer'];
+        
+        $trainerController->deleteTrainer($id_trainer);
+    }
+}
+
+// Listar treinadores
+$trainers = $trainerController->listTrainers();
+?>
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Gerenciar Treinadores</title>
+</head>
+<body>
+<table class="table table-striped">
+    <h1>Cadastro de Treinadores</h1>
+    <form method="POST">
+        <label for="name">Nome:</label>
+        <input type="text" id="name" name="name" required>
+        <br>
+        <label for="age">Idade:</label>
+        <input type="number" id="age" name="age" required>
+        <br>
+        <label for="height">Altura:</label>
+        <input type="number" id="height" name="height" step="0.01" required>
+        <br>
+        <label for="weight">Peso:</label>
+        <input type="number" id="weight" name="weight" step="0.01" required>
+        <br>
+        <label for="cpf">CPF:</label>
+        <input type="text" id="cpf" name="cpf" required>
+        <br>
+        <label for="rg">RG:</label>
+        <input type="text" id="rg" name="rg" required>
+        <br>
+        <input type="submit" name="create" value="Cadastrar">
+    </form>
+
+    <h2>Lista de Treinadores</h2>
     
+    <table border="1">
+        <thead>
+            <tr>
+            <table class="table table-striped">
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Idade</th>
+                <th>Altura</th>
+                <th>Peso</th>
+                <th>CPF</th>
+                <th>RG</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+            <?php foreach ($trainers as $trainer): ?>
+                <tr>
+                    <td><?php echo htmlspecialchars($trainer['id_trainer']); ?></td>
+                    <td><?php echo htmlspecialchars($trainer['name']); ?></td>
+                    <td><?php echo htmlspecialchars($trainer['age']); ?></td>
+                    <td><?php echo htmlspecialchars($trainer['height']); ?></td>
+                    <td><?php echo htmlspecialchars($trainer['weight']); ?></td>
+                    <td><?php echo htmlspecialchars($trainer['cpf']); ?></td>
+                    <td><?php echo htmlspecialchars($trainer['rg']); ?></td>
+                    <td>
+                   
+                    <a href="update_trainer.php?id=<?php echo htmlspecialchars($trainer['id_trainer']); ?>" class="btn btn-warning btn-sm">Editar</a>
+                    <a href="delete_trainer.php?id=<?php echo htmlspecialchars($trainer['id_trainer']); ?>" class="btn btn-danger btn-sm" onclick="return confirm('Tem certeza que deseja excluir este treinador?');">Excluir</a> </button>
+                        </form>
+                    </td>
+                </tr>
+            <?php endforeach; ?>
+        </tbody>
+    </table>
+
+    <?php if (isset($_POST['edit'])): ?>
+        <?php
+        $id_trainer = $_POST['id_trainer'];
+        $trainer = array_filter($trainers, fn($t) => $t['id_trainer'] == $id_trainer);
+        $trainer = reset($trainer);
+        ?>
+        <h2>Editar Treinador</h2>
+        <form method="POST">
+            <input type="hidden" name="id_trainer" value="<?php echo htmlspecialchars($trainer['id_trainer']); ?>">
+            <label for="name">Nome:</label>
+            <input type="text" id="name" name="name" value="<?php echo htmlspecialchars($trainer['name']); ?>" required>
+            <br>
+            <label for="age">Idade:</label>
+            <input type="number" id="age" name="age" value="<?php echo htmlspecialchars($trainer['age']); ?>" required>
+            <br>
+            <label for="height">Altura:</label>
+            <input type="number" id="height" name="height" step="0.01" value="<?php echo htmlspecialchars($trainer['height']); ?>" required>
+            <br>
+            <label for="weight">Peso:</label>
+            <input type="number" id="weight" name="weight" step="0.01" value="<?php echo htmlspecialchars($trainer['weight']); ?>" required>
+            <br>
+            <label for="cpf">CPF:</label>
+            <input type="text" id="cpf" name="cpf" value="<?php echo htmlspecialchars($trainer['cpf']); ?>" required>
+            <br>
+            <label for="rg">RG:</label>
+            <input type="text" id="rg" name="rg" value="<?php echo htmlspecialchars($trainer['rg']); ?>" required>
+            <br>
+            <input type="submit" name="update" value="Atualizar">
+        </form>
+    <?php endif; ?>
+</body>
+</html>
+
 </main>
 
 
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 
 
