@@ -140,10 +140,10 @@
                             <td><?php echo htmlspecialchars($trainer['cpf']); ?></td>
                             <td><?php echo htmlspecialchars($trainer['rg']); ?></td>
                             <td>
-                                <a href="update_trainer.php?id=<?php echo htmlspecialchars($trainer['id_trainer']); ?>" class="btn btn-warning btn-sm">
+                                <a href="update_trainer.php?id=<?php echo htmlspecialchars($trainer['id_trainer']); ?>" >
                                     <img class="btn_action" src='img/icons8-editar-24.png' alt="Editar">
                                 </a>
-                                <a href="delete_trainer.php?id=<?php echo htmlspecialchars($trainer['id_trainer']); ?>" class="btn btn-danger btn-sm" onclick="return confirm('Tem certeza que deseja excluir este treinador?');">
+                                <a href="delete_trainer.php?id=<?php echo htmlspecialchars($trainer['id_trainer']); ?>"  onclick="return confirm('Tem certeza que deseja excluir este treinador?');">
                                     <img class="btn_action" src='img/icons8-remover-16.png' alt="Excluir">
                                 </a>
                             </td>

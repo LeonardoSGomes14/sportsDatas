@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 
 <head>
-    <title>Pesquisa da Geração</title>
+    <title>Sobre nós</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -32,7 +32,7 @@
                         d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5" />
                 </svg></span>
         </button>
-        <a class="navbar-brand" href="#" style="font-weight: bold;">Geração Y Millennials 1</a>
+        <a class="navbar-brand" href="#" style="font-weight: bold;">Sports Data</a>
     </nav>
 
     <!-- Offcanvas -->
